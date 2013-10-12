@@ -37,6 +37,14 @@
  * how to customize the loading of plugin routes.
  */
 	CakePlugin::routes();
+	
+	$htmlLinks = array('index' => 'home', 'about', 'campaign', 'legacy', 'lookbook', 'campaign', 'media', 'contact');
+	foreach ($htmlLinks as $find => $view) {
+		if (is_numeric($find)) {
+			$find = $view;
+		}
+		Router::connect("/$find.html", array('controller' => 'pages', 'action' => 'display', $view, 'admin' => false));
+	}
 
 /**
  * Load the CakePHP default routes. Only remove this if you do not want to use
