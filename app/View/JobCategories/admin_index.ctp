@@ -1,6 +1,5 @@
 <h1>Job Categories</h1>
 <?php
-echo $this->Html->link('Test', array('controller' => 'pages', 'action' => 'about'));
 $View =& $this;
 echo $this->element('index_form', array(
 	'rowFunction' => function($i) use ($View) {
@@ -15,6 +14,7 @@ echo $this->element('index_form', array(
 				'value' => $View->Html->value($prefix . 'id'),
 				'label' => 'Remove',
 				'flip' => false,
+				'hiddenField' => true,
 			));
 		}
 		$out .= $View->Html->tag('td', $removeCell);

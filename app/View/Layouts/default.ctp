@@ -16,6 +16,33 @@
  * @since         CakePHP(tm) v 0.10.0.1076
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
+ 
+/**
+ * Social Media Navigation Links
+ * Store the Social Media navigation links here.
+ * Use the website name as the key, and then pass an array with the image and url as the two values
+ **/
+$socialNav = array(
+	'Instagram' => array('instagram.png', 'http://instagram.com/jordancraigdenim'),
+	'Blog' => array('wp.png', 'http://www.jordancraig.net/updates/'),
+	'Facebook' => array('facebook.png', 'https://www.facebook.com/jordancraigdenimbrand'),
+	'Twitter' => array('twitter.png', 'https://twitter.com/jcdenimbrand'),
+);
+
+/**
+ * Page Navigation Links
+ * Store the page navigation links here. Use the link text as the key, and the URL as the value
+ **/
+$pageUrl = array('controller' => 'pages', 'action' => 'display', 'admin' => false);	//Prevents us from having to re-type
+$pageNav = array(
+	'Home' => $pageUrl + array('home'),
+	'About' => $pageUrl + array('about'),
+	'Legacy Edition' => $pageUrl + array('legacy'),
+	'Lookbook' => $pageUrl + array('lookbook'),
+	'Campaign' => $pageUrl + array('campaign'),
+	'Media' => $pageUrl + array('media'),
+	'Contact' => $pageUrl + array('contact'),
+);
 
 ?>
 <?php echo $this->Html->docType('html4-trans')."\n";?>
@@ -43,24 +70,52 @@
 <div id="page">
 	<div class="inner">
 		<div class="mast">
-			<a href="index.html" class="logo"><img src="img/logo.png"  width="190" alt="Jordan Craig"></a>
+			<?php 
+				echo $this->Html->image('logo.png', array(
+					'url' => array('controller' => 'pages', 'action' => 'display', 'home'),
+					'width' => 190,
+					'alt' => 'Jordan Craig',
+				));
+			?>
 			<ul class="social">
-			<li class="first"><a href="http://instagram.com/jordancraigdenim"><img src="img/instagram.png" alt="Instagram"></a></li>
-			<li><a href="http://www.jordancraig.net/updates/"><img src="img/wp.png"></a></li>
-			<li><a href="https://www.facebook.com/jordancraigdenimbrand"><img src="img/facebook.png"></a></li>
-			<li class="last"><a href="https://twitter.com/jcdenimbrand"><img src="img/twitter.png"></a></li>
-					</ul>
-					<ul id="nav" class="nav">
-						<li class="first"><?php echo $this->Html->link('Home', array('controller' => 'pages', 'action' => 'display', 'home'));?></li>
-						<li><?php echo $this->Html->link('About', array('controller' => 'pages', 'action' => 'display', 'about'));?></li>
-						<li class="selected"><?php echo $this->Html->link('Legacy Edition', array('controller' => 'pages', 'action' => 'display', 'legacy'));?></li>
-						<li><?php echo $this->Html->link('Lookbook', array('controller' => 'pages', 'action' => 'display', 'lookbook'));?></li>
-						<li><?php echo $this->Html->link('Campaign', array('controller' => 'pages', 'action' => 'display', 'campaign'));?></li>
-						<li><?php echo $this->Html->link('Media', array('controller' => 'pages', 'action' => 'display', 'media'));?></li>
-						<li class="last"><?php echo $this->Html->link('Contact', array('controller' => 'pages', 'action' => 'display', 'contact'));?></li>
-					</ul><!-- /end .nav -->
-				</div><!-- /end .mast -->
-				
+			<?php
+				$count = 0;
+				$total = count($socialNav);
+				foreach ($socialNav as $alt => $info) {
+					list($img, $url) = $info;
+					$class = null;
+					if ($count++ == 0) {
+						$class = 'first';
+					} else if ($count == $total) {
+						$class = 'last';
+					}
+					echo $this->Html->tag('li', $this->Html->image($img, compact('url', 'alt'), compact('class')));
+				}
+			?>
+			</ul>
+			<ul id="nav" class="nav"><?php
+				$count = 0;
+				$total = count($pageNav);
+				foreach ($pageNav as $title => $url) {
+					$class = null;
+					if ($count++ == 0) {
+						$class = 'first';
+					} else if ($count == $total) {
+						$class = 'last';
+					}
+					if ($this->request->params['controller'] == $url['controller'] && $this->request->params['action'] == $url['action']) {
+						$class .= ' selected';
+					}
+					echo $this->Html->tag('li', $this->Html->link($title, $url, compact('title')), compact('class'));
+				}
+			?>
+			</ul><!-- /end .nav -->
+		</div><!-- /end .mast -->
+	<?php 
+		if ($crumbs = $this->Html->getCrumbs()) {
+			echo $this->Html->div(null, $crumbs, array('id' => 'crumbs'));
+		}
+	?>
 	<?php echo $this->Session->flash();?>
 	<?php echo $this->fetch('content'); ?>
 	

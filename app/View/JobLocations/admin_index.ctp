@@ -15,6 +15,7 @@ echo $this->element('index_form', array(
 				'type' => 'checkbox',
 				'value' => $View->Html->value($prefix . 'id'),
 				'label' => 'Remove',
+				'hiddenField' => true,
 			));
 		}
 		$out .= $View->Html->tag('td', $removeCell);
