@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<media>
+	<wallpapers>
+		<item>
+			<filename>logo</filename>
+			<title>d-lux logo</title>
+		</item>
+		<item>
+			<filename>bird-pattern</filename>
+			<title>BIRD PATTERN</title>
+		</item>
+		<item>
+			<filename>jean</filename>
+			<title>JEAN</title>
+		</item>
+		<item>
+			<filename>logo</filename>
+			<title>LOGO</title>
+		</item>
+		<item>
+			<filename>concert_2</filename>
+			<title>brian fair, shadows falls</title>
+		</item>
+		<item>
+			<filename>concert_1</filename>
+			<title>doc coyle, god forbid</title>
+		</item>
+	</wallpapers>
+	<videos>
+		<item>
+			<thumbnail>behind_the_scenes.jpg</thumbnail>
+			<title>behind the scenes fw2009 photoshoot</title>
+			<youtube>http://www.youtube.com/watch?v=SqUH1ph9xkE</youtube>
+		</item>
+		<item>
+			<thumbnail>marc_rizzo.jpg</thumbnail>
+			<title>marc rizzo, studio sessions 2</title>
+			<youtube>http://www.youtube.com/watch?v=RM2khq5ffQ4</youtube>
+		</item>
+		<item>
+			<thumbnail>marc_rizzo_isosceles.jpg</thumbnail>
+			<title>marc rizzo, studio sessions 1</title>
+			<youtube>http://www.youtube.com/watch?v=DRlqpcC0mm4</youtube>
+		</item>
+	</videos>
+</media>

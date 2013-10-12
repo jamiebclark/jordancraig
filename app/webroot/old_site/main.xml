@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<navigation>
+	<home>
+		<title>home</title>
+		<url>home</url>
+	</home>
+	<about>
+		<title>about</title>
+		<url>about</url>
+	</about>
+	<media>
+		<title>media</title>
+		<url>media</url>
+		<items>
+			<item>
+				<title>Wallpaper</title>
+				<url>media/wallpapers</url>
+			</item>
+			<item>
+				<title>Video</title>
+				<url>media/videos</url>
+			</item>
+		</items>
+	</media>
+	<contact>
+		<title>contact</title>
+		<url>contact</url>
+	</contact>
+	<blog>
+		<title>blog</title>
+		<url>blog</url>
+	</blog>
+</navigation>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<items>
+	<item1>
+		<imgpath>fall2011/1.jpg</imgpath>
+		<par>JACKET: 90706A (BLACK)</par>
+	</item1>
+	<item2>
+		<imgpath>fall2011/2.jpg</imgpath>
+		<par>TOP: 8L108 (A1)%VEST: 9301V (BLACK)%JEANS: JE110 (CHARCOAL)</par>
+	</item2>
+	<item3>
+		<imgpath>fall2011/3.jpg</imgpath>
+		<par>SWEATER: 39119 (A3)</par>
+	</item3>
+	<item4>
+		<imgpath>fall2011/4.jpg</imgpath>
+		<par>JACKET: 90701 (BLACK)</par>
+	</item4>
+	<item5>
+		<imgpath>fall2011/5.jpg</imgpath>
+		<par>TOP: 2373 (B3)%JEANS: JE110 (CHARCOAL)</par>
+	</item5>
+</items>

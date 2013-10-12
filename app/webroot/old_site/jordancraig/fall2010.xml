@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items>
+  <item1>
+    <imgpath>fall2010/1.jpg</imgpath>
+    <par>JACKET: 90706A (BLACK)</par>
+  </item1>
+  <item2>
+    <imgpath>fall2010/2.jpg</imgpath>
+    <par>TOP: 8L108 (A1)%VEST: 9301V (BLACK)%JEANS: JE110 (CHARCOAL)</par>
+  </item2>
+  <item3>
+    <imgpath>fall2010/3.jpg</imgpath>
+    <par>SWEATER: 39119 (A3)</par>
+  </item3>
+  <item4>
+    <imgpath>fall2010/4.jpg</imgpath>
+    <par>JACKET: 90701 (BLACK)</par>
+  </item4>
+  <item5>
+    <imgpath>fall2010/5.jpg</imgpath>
+    <par>TOP: 2373 (B3)%JEANS: JE110 (CHARCOAL)</par>
+  </item5>
+  <item6>
+    <imgpath>fall2010/6.jpg</imgpath>
+    <par>SWEATER: 39124V (WHITE)%JEANS: JE108 (VINTAGE)</par>
+  </item6>
+  <item7>
+    <imgpath>fall2010/7.jpg</imgpath>
+    <par>SWEATER: 8L111 (A8)%JEANS: JE108 (VINTAGE)</par>
+  </item7>
+  <item8>
+    <imgpath>fall2010/8.jpg</imgpath>
+    <par>TOP: 2375 (D3)</par>
+  </item8>
+</items>

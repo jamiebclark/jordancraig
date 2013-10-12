@@ -1,0 +1,13 @@
+html, body{
+	background-color: #00316F;
+	background-repeat: repeat;
+}
+
+
+#flashcontent {
+	background-color: #003471;
+	width: 800px;
+	height: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}

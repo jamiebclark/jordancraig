@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>Jordan Craig</title>
+		<link rel="icon" href="img/icon.ico">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/tinynav.min.js?v=1.11"></script>
+		<script type="text/javascript" src="js/resize.js"></script>
+		<link rel="stylesheet" href="css/layout.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+		<!--[if IE 7]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css">
+		<![endif]-->
+		<link rel="stylesheet" href="css/grid960.css" />
+		<link id="size-stylesheet" rel="stylesheet" type="text/css" href="css/max320.css" />
+		<!--<link rel="stylesheet" href="css/campaign.css" type="text/css" media="screen" />-->
+		<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="http://jordancraig.net/js/captify.tiny.js"></script>
+		<script type="text/javascript">
+		$(function () {$("#nav").tinyNav();});
+		</script>
+	</head>
+	<body class="loading">
+		<div id="page">
+			<div class="inner">
+				<div class="mast">
+					<a href="index.html" class="logo"><img src="img/logo.png"  width="190" alt="Jordan Craig"></a>
+					<ul class="social">
+						<li class="first"><a href="http://instagram.com/jordancraigdenim"><img src="img/instagram.png" alt="Instagram"></a></li>
+						<li><a href="http://www.jordancraig.net/updates/"><img src="img/wp.png"></a></li>
+						<li><a href="https://www.facebook.com/jordancraigdenimbrand"><img src="img/facebook.png"></a></li>
+						<li class="last"><a href="https://twitter.com/jcdenimbrand"><img src="img/twitter.png"></a></li>
+					</ul>
+					<ul id="nav" class="nav">
+						<li class="first"><a href="index.html">Home</a></li>
+						<li><a href="about.html" >About</a></li>
+						<li><a href="legacy.html">Legacy Edition</a></li>
+						<li><a href="lookbook.html">LookBook</a></li>
+						<li class="selected"><a href="campaign.html" class="active">Campaign</a></li>
+						<li><a href="media.html">Media</a></li>
+						<li class="last"><a href="contact.html">Contact</a></li>
+					</ul><!-- /end .nav -->
+					
+				</div><!-- /end .mast -->
+
+				<div class="section main" >
+				<div class="slidernav"></div>
+					<section class="slider">
+					<div class="flexslider">
+						<ul class="slides">
+							<li><img src="campaign/c_1.jpg" /></li>
+							<li><img src="campaign/c_2.jpg" /></li>
+							<li><img src="campaign/c_3.jpg" /></li>
+							<li><img src="campaign/c_4.jpg" /></li>
+						</ul>
+					</div>
+					</section>
+				</div><!-- /end .section.main -->
+				<div class="footer">
+					<p>&#169; Brian Brothers Inc. 2013. All Rights Reserved.</p>
+				</div><!-- /end .footer -->
+
+			</div><!-- /end .inner -->
+		</div><!-- /end #page -->
+	  <script defer src="js/jquery.flexslider.js"></script>
+  
+  <script type="text/javascript">
+    $(window).load(function(){
+      $('.flexslider').flexslider({
+        start: function(slider){
+          $('body').removeClass('loading');
+		  $('.flex-direction-nav li').eq(0).css({
+  right : '50px',
+   top : '-26px'
+});
+		  $('.flex-direction-nav li').eq(1).css({
+   left : '50px',
+   top : '-26px'
+});
+		}
+      });
+    });
+  </script>
+	</body>
+</html>

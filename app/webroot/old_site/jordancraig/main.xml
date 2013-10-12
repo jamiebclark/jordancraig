@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<data>
+	<top_items>
+		<item>
+			<caption>Prologue</caption>
+			<pageLink>0</pageLink>
+		</item>
+		<item>
+			<caption>Legacy Edition</caption>
+			<pageLink>0</pageLink>
+		</item>
+		<item>
+			<caption>Wallpaper</caption>
+			<pageLink>0</pageLink>
+		</item>
+	</top_items>
+	<bot_items>
+		<item>
+			<caption>Contact</caption>
+			<pageLink>3</pageLink>
+		</item>
+	</bot_items>
+</data>

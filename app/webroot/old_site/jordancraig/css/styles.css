@@ -1,0 +1,95 @@
+.section:after{
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+ol,ul { list-style:none; }
+blockquote,q { quotes:none; }
+blockquote:before,blockquote:after,q:before,q:after {content:'';content:none; }
+ins {text-decoration:none; }
+del {text-decoration:line-through; }
+table {border-collapse:collapse; border-spacing:0; }
+body {
+	/**background: #E4E4E4 url("../img/bg.png");
+	color: #292929;
+	color: rgba(0, 0, 0, 0.82);**/
+	font: normal 100% "Helvetica", Arial, sans-serif;
+	-webkit-text-size-adjust: none;
+	margin:0 auto; position:relative;
+}
+a {color: #000000;	text-decoration: none;}
+a:hover {color: #000000;font-weight:bold;}
+a.logo{width:100%; float:left; position:relative;}
+sup{font-size:70%; vertical-align:top; height: 0; line-height: 1;}
+
+ul.nav{float:right; }
+ul.nav a {
+	font: .67em/1.2 "Helvetica", Arial, sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+	display:block;
+}
+ul.nav a.active{font-weight:bold;}
+ul.nav a:hover {font-weight:bold;}
+ul.nav li {display: inline-block; margin:0;}
+ul.nav li.last a {padding-right:0;}
+ul.nav li.first {padding-left:0;}
+ul.nav li.first a{text-align:right;}
+ul.social{float:right; width:50%; position:relative;}
+ul.social li{display:inline; float:right; }
+ul.social li.first a{padding-right:0;}
+ul.social li a{padding: 0 .25em; display:block;}
+.divider{display:block; clear:both; background:#909195; width:100%; color:#ffffff; text-transform: uppercase; font: 11px/1.2 "Helvetica",Arial,sans-serif; font-weight:bold; padding:.5em 0; text-align:center;float:left;}
+.main h2 {text-transform: uppercase;text-align: left; margin: 2em 2em .35em 1.72em;}
+.main p{text-align:justify;font-size:.85em; margin:0 8em 0 2em;}
+
+.main .media p{margin:1em; text-align:center;}
+.media{margin: 0 auto; float:left; width:100%;}
+.media li{float:left;}
+img.next, img.prev{cursor:pointer;}
+
+
+.footer {font-size: 11px; text-align: center; padding: 2em 0 2em;}
+.footer p {margin-bottom: 0.5em; color:#bbb;}
+
+/* Contact Form */
+form{font-size:0.85em; width:55%; font: normal 100% "Helvetica", Arial, sans-serif;}
+form span {text-align:justify; font-size:1em;}
+form label, form input{display:block; padding: 6px 0 2px; font-size:.85em;}
+input#email_input, textarea#message_input{width:90%; padding:0;}
+input[type="submit"] {
+    background: none repeat scroll 0 0 #191919;
+    border: medium none;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-top: 5px;
+	padding:2px;
+	font-size:11px;
+	left:0;
+	position:relative;
+}
+textarea#message_input{height:50px;}
+div.clear {clear: both;} 
+.caption-top, .caption-bottom {
+    background: #000000;
+    color: #ffffff;
+    cursor:default;
+    padding:5px 0 ;
+     font-size:11px;
+     text-align:center;
+}
+.caption-bottom {
+     border-width:0px;
+}
+.tinynav{
+    display: none;
+    font-size: 14px;
+    margin: .25em .3em;
+    width: 98%;
+	float:left;
+	}
