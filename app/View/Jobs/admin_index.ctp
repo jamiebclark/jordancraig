@@ -1,6 +1,7 @@
 <h1>Jobs</h1>
 <ul class="actions actions-menu">
 	<li><?php echo $this->Html->link('Add a new job listing', array('action' => 'add')); ?></li>
+	<li><?php echo $this->Html->link('View public page', array('admin' => false, 'action' => 'index')); ?></li>
 </ul>
 <?php echo $this->element('jobs/paginate_nav'); ?>
 <table>

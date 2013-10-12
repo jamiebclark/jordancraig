@@ -33,4 +33,11 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 	var $helpers = array('Html', 'Form', 'App');
+	
+	public function beforeRender($options) {
+		if (!empty($this->request->params['prefix']) && $this->request->params['prefix'] == 'admin') {
+			$this->layout = 'admin';
+		}
+		return parent::beforeRender($options);
+	}
 }

@@ -26,8 +26,6 @@ class JobsController extends AppController{
 		}
 		$hasFilter = !empty($criteria);	//Passes to View if the user is filtering the search
 
-		debug(compact('criteria', 'conditions'));
-		
 		//Only grabs active jobs
 		$this->paginate = compact('conditions');
 		//Finds this page of jobs

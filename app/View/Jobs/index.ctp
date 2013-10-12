@@ -19,12 +19,20 @@ else: ?>
 	<tr>
 		<th><?php echo $this->Paginator->sort('Job.title', 'Job Title'); ?></th>
 		<th><?php echo $this->Paginator->sort('JobCategory.title', 'Job Category'); ?></th>
-
+		<th>Overview</th>
 	</tr>
-	<?php foreach ($jobs as $job): ?>
+	<?php foreach ($jobs as $job): 
+		$url = array('action' => 'view', $job['Job']['id']); 
+		?>
 		<tr>
-			<td><?php echo $this->Html->link($job['Job']['title'], array('action' => 'view', $job['Job']['id'])); ?></td>
+			<td><?php echo $this->Html->link($job['Job']['title'], $url); ?></td>
 			<td><?php echo $job['JobCategory']['title']; ?></td>
+			<td><?php
+				if (!empty($job['Job']['overview'])) {
+					echo $this->Text->truncate($job['Job']['overview']) . ' ';
+				}
+				echo $this->Html->link('Read More', $url);
+			?></td>
 		</tr>
 	<?php endforeach; ?>
 	</table>
