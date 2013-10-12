@@ -46,9 +46,6 @@ CREATE TABLE IF NOT EXISTS `jobs` (
 -- Dumping data for table `jobs`
 --
 
-INSERT INTO `jobs` (`id`, `job_category_id`, `job_location_id`, `title`, `overview`, `responsibilities`, `qualifications`, `active`, `created`, `modified`) VALUES
-(1, 1, NULL, 'Senior Designer', 'This is the overview', 'Do stuff\r\nDo other stuff\r\nDon''t do that stuff', 'This stuff\r\nThis other stuff\r\nThis really cool stuff', 1, '2013-10-12 17:45:54', '2013-10-12 17:52:24');
-
 -- --------------------------------------------------------
 
 --
@@ -64,11 +61,6 @@ CREATE TABLE IF NOT EXISTS `job_categories` (
 --
 -- Dumping data for table `job_categories`
 --
-
-INSERT INTO `job_categories` (`id`, `title`) VALUES
-(1, 'Production'),
-(2, 'Merchandising'),
-(3, 'Fulfillment');
 
 -- --------------------------------------------------------
 
