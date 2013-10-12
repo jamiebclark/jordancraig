@@ -1,3 +1,9 @@
+<style type="text/css">
+form.job-filter {
+	width: auto;
+	float: none;
+}
+</style>
 <h1>Job Listings</h1>
 <?php 
 //Display if no jobs are found:
@@ -41,7 +47,7 @@ else: ?>
 
 <?php 
 //Filter form
-echo $this->Form->create(null); ?>
+echo $this->Form->create(null, array('class' => 'job-filter')); ?>
 	<fieldset>
 		<legend>Filter jobs</legend>
 		<?php

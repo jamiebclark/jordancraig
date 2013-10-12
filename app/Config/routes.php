@@ -38,12 +38,14 @@
  */
 	CakePlugin::routes();
 	
+	//Checks the array of old *.html files from the previous page layout and translates them to the Pages section
 	$htmlLinks = array('index' => 'home', 'about', 'campaign', 'legacy', 'lookbook', 'campaign', 'media', 'contact');
 	foreach ($htmlLinks as $find => $view) {
 		if (is_numeric($find)) {
 			$find = $view;
 		}
-		Router::connect("/$find.html", array('controller' => 'pages', 'action' => 'display', $view, 'admin' => false));
+		$url = is_array($view) ? $view : array('controller' => 'pages', 'action' => 'display', $view, 'admin' => false);
+		Router::connect("/$find.html", $url);
 	}
 
 /**

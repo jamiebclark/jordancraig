@@ -1,5 +1,5 @@
 <?php
-class JobsController extends AppController{
+class JobsController extends AppController {
 	function index() {
 		//Finds Job Categories
 		$jobCategories = $this->Job->JobCategory->find('list');
