@@ -51,13 +51,13 @@
 			<li class="last"><a href="https://twitter.com/jcdenimbrand"><img src="img/twitter.png"></a></li>
 					</ul>
 					<ul id="nav" class="nav">
-						<li class="first"><a href="index.html" >Home</a></li>
-						<li><a href="about.html">About</a></li>
-						<li class="selected"><a href="legacy.html" class="active">Legacy Edition</a></li>
-						<li><a href="lookbook.html">LookBook</a></li>
-						<li><a href="campaign.html">Campaign</a></li>
-						<li><a href="media.html">Media</a></li>
-						<li class="last"><a href="contact.html">Contact</a></li>
+						<li class="first"><?php echo $this->Html->link('Home', array('controller' => 'pages', 'action' => 'display', 'home'));?></li>
+						<li><?php echo $this->Html->link('About', array('controller' => 'pages', 'action' => 'display', 'about'));?></li>
+						<li class="selected"><?php echo $this->Html->link('Legacy Edition', array('controller' => 'pages', 'action' => 'display', 'legacy'));?></li>
+						<li><?php echo $this->Html->link('Lookbook', array('controller' => 'pages', 'action' => 'display', 'lookbook'));?></li>
+						<li><?php echo $this->Html->link('Campaign', array('controller' => 'pages', 'action' => 'display', 'campaign'));?></li>
+						<li><?php echo $this->Html->link('Media', array('controller' => 'pages', 'action' => 'display', 'media'));?></li>
+						<li class="last"><?php echo $this->Html->link('Contact', array('controller' => 'pages', 'action' => 'display', 'contact'));?></li>
 					</ul><!-- /end .nav -->
 				</div><!-- /end .mast -->
 				
