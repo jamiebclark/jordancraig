@@ -21,21 +21,56 @@
 <?php echo $this->Html->docType('html4-trans')."\n";?>
 <html>
 <head>
-	<?php	echo $this->Html->charset()."\n";
-			echo $this->Html->css('styles');
-			echo $this->Html->script(array('tinynav.min.js?v=1.11', 'resize'));?>
-	<title><?php echo $title_for_layout;?></title>
-	<?php
-		echo $this->Html->meta('icon', '/icon.ico');
-		//echo $this->Html->css('cake.generic');
-		echo $this->fetch('meta');
-		//echo $this->fetch('css');
-		echo $this->fetch('script');
-	?>
+<?php
+	echo $this->Html->charset()."\n";
+	echo $this->Html->meta(array('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no'))."\n";?>
+<title><?php echo $title_for_layout;?></title>
+<?php
+	echo $this->Html->meta('icon', '/icon.ico');
+	echo $this->Html->script(array('http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js','tinynav.min.js?v=1.11', 'resize'));
+	echo $this->Html->css(array('layout','styles'));?>
+	<!--[if IE 7]>
+	<?php echo $this->Html->css('ie')."\n";?>
+	<![endif]-->
+<?php
+	//echo $this->Html->css('cake.generic');
+	//echo $this->fetch('meta');
+	//echo $this->fetch('css');
+	//echo $this->fetch('script');?>
 </head>
 <body>
-	<?php echo $this->Session->flash(); ?>
+
+<div id="page">
+	<div class="inner">
+		<div class="mast">
+			<a href="index.html" class="logo"><img src="img/logo.png"  width="190" alt="Jordan Craig"></a>
+			<ul class="social">
+			<li class="first"><a href="http://instagram.com/jordancraigdenim"><img src="img/instagram.png" alt="Instagram"></a></li>
+			<li><a href="http://www.jordancraig.net/updates/"><img src="img/wp.png"></a></li>
+			<li><a href="https://www.facebook.com/jordancraigdenimbrand"><img src="img/facebook.png"></a></li>
+			<li class="last"><a href="https://twitter.com/jcdenimbrand"><img src="img/twitter.png"></a></li>
+					</ul>
+					<ul id="nav" class="nav">
+						<li class="first"><a href="index.html" >Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li class="selected"><a href="legacy.html" class="active">Legacy Edition</a></li>
+						<li><a href="lookbook.html">LookBook</a></li>
+						<li><a href="campaign.html">Campaign</a></li>
+						<li><a href="media.html">Media</a></li>
+						<li class="last"><a href="contact.html">Contact</a></li>
+					</ul><!-- /end .nav -->
+				</div><!-- /end .mast -->
+				
+	<?php echo $this->Session->flash();?>
 	<?php echo $this->fetch('content'); ?>
-	<?php echo $this->element('sql_dump'); ?>
+	
+<div class="footer">
+					<p>&#169; Brian Brothers Inc. 2013. All Rights Reserved.</p>
+					
+				</div><!-- /end .footer -->
+
+			</div><!-- /end .inner -->
+		</div><!-- /end #page -->
+	<?php echo $this->element('sql_dump');?>
 </body>
 </html>
