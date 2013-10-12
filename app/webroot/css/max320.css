@@ -1,0 +1,30 @@
+.mast,
+.intro, 
+.main, 
+.section,
+.footer {
+	float: none;
+	width: auto;
+}
+.mast{padding-left:.1em; padding-right:.1em;}
+
+a.logo{width:169px; height:28px;}
+ul.nav li {padding:0.45em 0.25em;}
+ul.nav a {font-size: .6em; }
+ul.social {
+	padding: .25em 0;
+	width:30%;
+}
+.tinynav{display:block;}
+.main h2 {font-size: .85em;margin: 1em 1em .25em 1em;}
+.main p{font-size:.75em; margin:0 1em;}
+form{float:left; width:95%; margin: 1em 0 1em 1em;}
+form:after{	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;}
+.media li{width:200px; margin: 1em; text-align:center; }
+.media li.first{}
+.main .media p{text-align:center; width:200px; margin:1em 0;}
+

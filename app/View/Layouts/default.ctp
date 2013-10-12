@@ -18,18 +18,18 @@
  */
 
 ?>
-<!DOCTYPE html>
+<?php echo $this->Html->docType('html4-trans')."\n";?>
 <html>
 <head>
-	<?php echo $this->Html->charset(); ?>
-	<title>
-		<?php echo $title_for_layout; ?>
-	</title>
+	<?php	echo $this->Html->charset()."\n";
+			echo $this->Html->css('styles');
+			echo $this->Html->script(array('tinynav.min.js?v=1.11', 'resize'));?>
+	<title><?php echo $title_for_layout;?></title>
 	<?php
-		echo $this->Html->meta('icon');
+		echo $this->Html->meta('icon', '/icon.ico');
 		//echo $this->Html->css('cake.generic');
 		echo $this->fetch('meta');
-		echo $this->fetch('css');
+		//echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
 </head>
