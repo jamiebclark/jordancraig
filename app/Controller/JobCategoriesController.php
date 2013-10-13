@@ -4,6 +4,6 @@ class JobCategoriesController extends AppController {
 	var $components = array('IndexForm');
 
 	function admin_index() {
-		$this->IndexForm->processData();
+		$this->IndexForm->processData(array('blankDelete' => array('title')));
 	}
 }

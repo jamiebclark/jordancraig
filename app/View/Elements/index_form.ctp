@@ -1,5 +1,5 @@
 <?php echo $this->Form->create(); ?>
-<table>
+<table class="table-index-form">
 <?php for ($i = 0; $i < $totalRows; $i++):
 	echo call_user_func($rowFunction, $i);
 endfor; ?>

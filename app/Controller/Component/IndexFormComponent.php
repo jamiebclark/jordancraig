@@ -16,12 +16,16 @@ class IndexFormComponent extends Component {
 		return parent::initialize($controller);
 	}
 	
-	public function processData() {
+	public function processData($options = array()) {
+		$options = array_merge(array(
+			'blankDelete' => array(),
+		), $options);
+		
 		$totalRows = 0;			//How many rows should be displayed
 		
 		$alias = Inflector::classify($this->controller->params['controller']);
-		$human = Inflector::humanize($alias);
-		$humanPlural = Inflector::pluralize($human);
+		$humanPlural = Inflector::humanize($this->controller->params['controller']);
+		$human = Inflector::singularize($humanPlural);
 		
 		$Model = $this->controller->{$alias};
 		
@@ -29,29 +33,38 @@ class IndexFormComponent extends Component {
 		if (!empty($this->controller->request->data)) {
 			$data =& $this->controller->request->data;
 		}
+	
 		if (!empty($data)) {
 			//Checks if actual Update button was pressed
 			if (isset($data['update'])) {
 				//Filters out blank values
 				foreach ($data[$alias] as $key => $row) {
-					if (empty($row['city']) || empty($row['state'])) {
-						if (!empty($row['id'])) {
-							$data['Filter']['delete'][] = $row['id'];
+					if (!empty($options['blankDelete'])) {
+						foreach ($options['blankDelete'] as $field) {
+							if (empty($row[$field])) {
+								if (!empty($row['id'])) {
+									$data['Filter']['delete'][] = $row['id'];
+								}
+								unset($data[$alias][$key]);
+								break;
+							}
 						}
-						unset($data[$alias][$key]);
 					}
 				}
 				
 				$data[$alias] = array_values($data[$alias]);	//Re-indexes array in case some were deleted
 				if ($Model->saveAll($data[$alias])) {
 					$msg = 'Successfully updated ' . $human;
+					$class = 'alert-success';
 					$redirect = array('action' => 'index');	//Redirects to the same action just to get rid of POST data if user refreshes the page
 					if (!empty($data['Filter']['delete'])) {
-						$Model->deleteAll(array('JobLocation.id' => $data['Filter']['delete']));
+						$Model->deleteAll(array("$alias.id" => $data['Filter']['delete']));
+						debug($data['Filter']['delete']);
 						$msg .= ' Removed ' . count($data['Filter']['delete']) . ' ' . $humanPlural;
 					}
 				} else {
 					$msg = 'There was an error saving this ' . $human;
+					$class = 'alert-error';
 					$redirect = false;
 				}
 				
