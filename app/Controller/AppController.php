@@ -33,8 +33,15 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 	var $components = array(
+		'MobileRedirect' => array(
+			//Add redirects if necessary
+			'mobileRedirect' => null,
+			'desktopRedirect' => null,
+		),
 		'GeoIp' => array(
-			'block' => array('PK', 'CN', 'HK', 'BD'),	//Country codes to be blocked from access to the page
+			//Country codes blocked from access to the page
+			'block' => array('PK', 'CN', 'HK', 'BD'),
+			'redirect' => array('controller' => 'pages', 'action' => 'display', 'coming_soon'),
 		)
 	);
 	var $helpers = array('Html', 'Form', 'JordanCraig');
