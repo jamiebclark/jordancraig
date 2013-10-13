@@ -39,13 +39,24 @@
 	CakePlugin::routes();
 	
 	//Checks the array of old *.html files from the previous page layout and translates them to the Pages section
-	$htmlLinks = array('index' => 'home', 'about', 'campaign', 'legacy', 'lookbook', 'campaign', 'media', 'contact');
-	foreach ($htmlLinks as $find => $view) {
+	$htmlLinks = array(
+		'index' => 'home', 
+		'about', 
+		'campaign', 
+		'legacy', 
+		'lookbook', 
+		'campaign', 
+		'media', 
+		'contact' => array('controller' => 'contacts', 'action' => 'index')
+	);
+	foreach ($htmlLinks as $find => $redirect) {
 		if (is_numeric($find)) {
-			$find = $view;
+			$find = $redirect;
 		}
-		$url = is_array($view) ? $view : array('controller' => 'pages', 'action' => 'display', $view, 'admin' => false);
-		Router::connect("/$find.html", $url);
+		if (!is_array($redirect)) {
+			$redirect = array('controller' => 'pages', 'action' => 'display', 'admin' => false, $redirect);
+		}
+		Router::connect("/$find.html", $redirect);
 	}
 
 /**

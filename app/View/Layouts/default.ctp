@@ -41,7 +41,7 @@ $pageNav = array(
 	'Lookbook' => $pageUrl + array('lookbook'),
 	'Campaign' => $pageUrl + array('campaign'),
 	'Media' => $pageUrl + array('media'),
-	'Contact' => $pageUrl + array('contact'),
+	'Contact' => array('controller' => 'contacts', 'action' => 'index', 'admin' => false),
 );
 
 ?>
@@ -111,33 +111,35 @@ $pageNav = array(
 			?>
 			</ul><!-- /end .nav -->
 		</div><!-- /end .mast -->
-	<?php 
-		if ($crumbs = $this->Html->getCrumbs()) {
-			echo $this->Html->div(null, $crumbs, array('id' => 'crumbs'));
-		}
-	?>
-	<?php echo $this->Session->flash();?>
-	<?php echo $this->fetch('content'); ?>
-	
-<div class="footer">
-					<p>&#169; Brian Brothers Inc. 2013. All Rights Reserved.</p>
-					
-				</div><!-- /end .footer -->
+		<div class="section main">
+			<?php 
+				if ($crumbs = $this->Html->getCrumbs()) {
+					echo $this->Html->div(null, $crumbs, array('id' => 'crumbs'));
+				}
+			?>
+			<?php echo $this->Session->flash();?>
+			<?php echo $this->fetch('content'); ?>
+		</div>	
+		<div class="footer">
+			<p>&#169; Brian Brothers Inc. 2013. All Rights Reserved.</p>
+		</div><!-- /end .footer -->
+	</div><!-- /end .inner -->
+</div><!-- /end #page -->
 
-			</div><!-- /end .inner -->
-		</div><!-- /end #page -->
-	<?php echo $this->element('sql_dump');?>
+<?php 
+//todo: remove this before page launch
+echo $this->element('sql_dump');
+?>
 
-	<script type="text/javascript">
-		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-	</script> 
-	<script type="text/javascript">
-		try {
-			var pageTracker = _gat._getTracker("UA-8053370-1");
-			pageTracker._trackPageview();
-		} catch(err) {}
-	</script>
-
+<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script> 
+<script type="text/javascript">
+	try {
+		var pageTracker = _gat._getTracker("UA-8053370-1");
+		pageTracker._trackPageview();
+	} catch(err) {}
+</script>
 </body>
 </html>
