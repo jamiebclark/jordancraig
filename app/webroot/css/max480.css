@@ -1,0 +1,23 @@
+.mast,
+.intro, 
+.main, 
+.section,
+.footer {
+	float: none;
+	width: auto;
+}
+.mast{padding-left:.1em; padding-right:.1em;}
+a.logo{width:169px; height:28px;}
+ul.nav{position:relative; right:0; width:420px; float:right;}
+ul.nav li {padding:0.45em .25em;}
+ul.nav li.last{padding-right:0; width:53px;}
+.main h2 {font-size: .85em;margin: 2em 2em .35em 1.8em;}
+.main p{font-size:.75em; margin:0 2em; clear:left;}
+
+form:after{	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;}
+.media li{width:200px; margin: 1em 1em; text-align:center; }
+.main .media p{text-align:center; width:200px;  margin:1em 0;}
