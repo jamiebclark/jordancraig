@@ -32,7 +32,12 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-	var $helpers = array('Html', 'Form', 'App');
+	var $components = array(
+		'GeoIp' => array(
+			'block' => array('PK', 'CN', 'HK', 'BD'),	//Country codes to be blocked from access to the page
+		)
+	);
+	var $helpers = array('Html', 'Form', 'JordanCraig');
 	
 	public function beforeRender() {
 		if (!empty($this->request->params['prefix']) && $this->request->params['prefix'] == 'admin') {

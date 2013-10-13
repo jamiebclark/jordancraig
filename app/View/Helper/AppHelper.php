@@ -32,9 +32,4 @@ App::uses('Helper', 'View');
  */
 class AppHelper extends Helper {
 	public $helpers = array('Form', 'Html');
-	
-	function beforeRender($options) {
-		$this->Html->css('webdev', null, array('inline' => false));
-		return parent::beforeRender($options);
-	}
 }
