@@ -26,7 +26,6 @@ class ContactsController extends AppController {
 				$fromEmail = $data['email'];
 				$message = $data['message'];
 				
-				
 				//Create email
 				if (!$useCakeEmail) {
 					$eol = "\r\n";

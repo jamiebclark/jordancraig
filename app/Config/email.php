@@ -44,14 +44,15 @@ class EmailConfig {
 		//'headerCharset' => 'utf-8',
 	);
 
+	//Configured to add a Gmail email address later
 	public $smtp = array(
 		'transport' => 'Smtp',
-		'from' => array('webmaster@souperbowl.org' => 'Souper Bowl of Caring'),
+		'from' => array('@gmail.com' => 'Jordan Craig Website'),
 		'host' => 'ssl://smtp.gmail.com',
 		'port' => 465,
 		'timeout' => 30,
-		'username' => 'webmaster@souperbowl.org',
-		'password' => 'souper',
+		'username' => '@gmail.com',
+		'password' => 'secret',
 		'client' => null,
 		'log' => false,
 		//'charset' => 'utf-8',
