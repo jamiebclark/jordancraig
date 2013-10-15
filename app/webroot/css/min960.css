@@ -5,7 +5,7 @@ sup {font-size:70%;height:0;line-height:1;vertical-align:top;}
 h1 a {padding-top: 117px;height: 162px;display: block;text-align: center;}
 
 /*ul.nav{position:relative; right:0; float:right; }*/
-ul.nav li{padding: .7em; }
+ul.nav li{padding: .7em; padding-top:0;}
 ul.nav li.last{padding-right:0;}
 ul.nav a {
 	display: block;
