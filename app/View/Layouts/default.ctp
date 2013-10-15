@@ -107,7 +107,7 @@ $pageNav = array(
 						$class = 'last';
 					}
 					if ($this->request->params['controller'] == $url['controller'] && $this->request->params['action'] == $url['action']) {
-						$class .= ' selected';
+						$class .= 'selected';
 					}
 					echo $this->Html->tag('li', $this->Html->link($title, $url, compact('title')), compact('class'))."\n";
 				}
