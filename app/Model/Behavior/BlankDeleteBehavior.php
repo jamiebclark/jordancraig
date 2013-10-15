@@ -14,7 +14,7 @@ class BlankDeleteBehavior extends ModelBehavior {
 	//This keeps track of which models actually have BlankDelete behavior settings
 	private $hasBlankDelete = array();
 	
-	function setup(&$Model, $settings = array()) {
+	function setup($Model, $settings = array()) {
 		if (!empty($settings)) {
 			$this->hasBlankDelete[$Model->alias] = true;
 			if (!isset($this->settings[$Model->alias])) {
@@ -34,12 +34,12 @@ class BlankDeleteBehavior extends ModelBehavior {
 		}
 	}
 	
-	function beforeValidate($Model) {
+	function beforeValidate(Model $Model, $options = array()) {
 		$Model->data = $this->checkBlankDelete($Model);
-		return parent::beforeValidate($Model);
+		return parent::beforeValidate($Model, $options);
 	}
 	
-	function beforeSave(Model $Model, $options) {
+	function beforeSave(Model $Model, $options = array()) {
 		$this->confirmDelete = false;
 		$Model->data = $this->checkBlankDelete($Model);
 		return parent::beforeSave($Model, $options);

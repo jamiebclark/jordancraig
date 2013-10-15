@@ -1,5 +1,9 @@
 /app/webroot/.sass-cache/
 
+/app/webroot/files/resume/*
+!/app/webroot/files/resume/
+!/app/webroot/files/resume/empty
+
 # User specific & automatically generated files #
 #################################################
 /app/Config/database.php

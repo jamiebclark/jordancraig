@@ -58,6 +58,7 @@
 		}
 		Router::connect("/$find.html", $redirect);
 	}
+	Router::connect('/contact/', array('controller' => 'contacts', 'action' => 'index', 'admin' => false));
 
 /**
  * Load the CakePHP default routes. Only remove this if you do not want to use

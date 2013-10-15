@@ -59,7 +59,6 @@ class IndexFormComponent extends Component {
 					$redirect = array('action' => 'index');	//Redirects to the same action just to get rid of POST data if user refreshes the page
 					if (!empty($data['Filter']['delete'])) {
 						$Model->deleteAll(array("$alias.id" => $data['Filter']['delete']));
-						debug($data['Filter']['delete']);
 						$msg .= ' Removed ' . count($data['Filter']['delete']) . ' ' . $humanPlural;
 					}
 				} else {

@@ -23,8 +23,9 @@ else: ?>
 	<?php echo $this->element('jobs/paginate_nav'); ?>
 	<table>
 	<tr>
-		<th><?php echo $this->Paginator->sort('Job.title', 'Job Title'); ?></th>
-		<th><?php echo $this->Paginator->sort('JobCategory.title', 'Job Category'); ?></th>
+		<th><?php echo $this->Paginator->sort('Job.title', 'Title'); ?></th>
+		<th><?php echo $this->Paginator->sort('JobCategory.title', 'Category'); ?></th>
+		<th><?php echo $this->Paginator->sort('JobLocation.title', 'Location'); ?></th>
 		<th>Overview</th>
 	</tr>
 	<?php foreach ($jobs as $job): 
@@ -33,6 +34,7 @@ else: ?>
 		<tr>
 			<td><?php echo $this->Html->link($job['Job']['title'], $url); ?></td>
 			<td><?php echo $job['JobCategory']['title']; ?></td>
+			<td><?php echo $job['JobLocation']['title']; ?></td>
 			<td><?php
 				if (!empty($job['Job']['overview'])) {
 					echo $this->Text->truncate($job['Job']['overview']) . ' ';
@@ -61,6 +63,13 @@ echo $this->Form->create(null, array('class' => 'job-filter')); ?>
 			'options' => $jobCategories,
 			'size' => 4,
 		));
+		echo $this->Form->input('Job.job_location_id', array(
+			'type' => 'select',
+			'multiple' => true,
+			'options' => $jobLocations,
+			'size' => 4,
+		));
+
 		echo $this->Form->button('Search', array('type' => 'submit'));
 		?>
 	</fieldset>

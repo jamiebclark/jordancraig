@@ -33,6 +33,7 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 	var $components = array(
+		'FormData.FormData',
 		'Session',
 		'MobileRedirect' => array(
 			//Add redirects if necessary

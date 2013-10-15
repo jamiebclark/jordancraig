@@ -1,10 +1,16 @@
 <?php
 class JobsController extends AppController {
+	public $name = 'Jobs';
+	public $helpers = array('Job');
+	
 	function index() {
 		//Finds Job Categories
 		$jobCategories = $this->Job->JobCategory->find('list');
 		$jobCategories = array('' => '(All Categories)') + $jobCategories;	//Adds blank category
 
+		$jobLocations = $this->Job->JobLocation->find('list');
+		$jobLocations = array('' => '(All Locations)') + $jobLocations;
+		
 		$criteria = array();
 		$conditions = array('Job.active' => 1);
 		if (!empty($this->request->data['Filter']['keyword'])) {
@@ -12,15 +18,24 @@ class JobsController extends AppController {
 			$conditions['Job.title LIKE'] = '%' . $keyword . '%';
 			$criteria[] = "Contains \"$keyword\"";
 		}
-		if (!empty($this->request->data['Job']['job_category_id'])) {
-			foreach ($this->request->data['Job']['job_category_id'] as $jobCategoryId) {
-				if ($jobCategoryId == '') {	//User has select "All Categories"
-					unset($conditions['Job.job_category_id']);
-					break;
-				}
-				if (!empty($jobCategories[$jobCategoryId])) {
-					$criteria[] = 'Category: ' . $jobCategories[$jobCategoryId];
-					$conditions['Job.job_category_id'][] = $jobCategoryId;
+		
+		//Filter Results
+		$fields = array(
+			'Category' => array('job_category_id', $jobCategories),
+			'Location' => array('job_location_id', $jobLocations),
+		);
+		foreach ($fields as $fieldLabel => $fieldVars) {	
+			list($field, $fieldResult) = $fieldVars;
+			if (!empty($this->request->data['Job'][$field])) {
+				foreach ($this->request->data['Job'][$field] as $fieldId) {
+					if ($fieldId == '') {	//User has select "All Categories"
+						unset($conditions["Job.$field"]);
+						break;
+					}
+					if (!empty($fieldResult[$fieldId])) {
+						$criteria[] = "$fieldLabel: {$fieldResult[$fieldId]}";
+						$conditions["Job.$field"][] = $fieldId;
+					}
 				}
 			}
 		}
@@ -33,7 +48,7 @@ class JobsController extends AppController {
 		
 		
 		//Sends variables to View
-		$this->set(compact('jobs', 'jobCategories', 'hasFilter'));
+		$this->set(compact('jobs', 'jobCategories', 'jobLocations', 'hasFilter'));
 	}
 	
 	function view($id = null) {
@@ -109,6 +124,7 @@ class JobsController extends AppController {
 	
 	function _setFormElements() {
 		$jobCategories = $this->Job->JobCategory->find('list');
-		$this->set(compact('jobCategories'));
+		$jobLocations = $this->Job->JobLocation->find('list');
+		$this->set(compact('jobCategories', 'jobLocations'));
 	}
 }

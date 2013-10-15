@@ -17,6 +17,7 @@ echo $this->Form->hidden('id');
 echo $this->Form->inputs(array(
 	'title',
 	'job_category_id',
+	'job_location_id', 
 	'overview',
 	'responsibilities',
 	'qualifications',
