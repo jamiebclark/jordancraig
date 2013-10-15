@@ -1,4 +1,5 @@
 <?php echo $this->Html->image('contact.jpg', array('alt' => '2013 Fall Winter Campaign')); ?>
+<div class="clear"></div>
 <h2>Contact</h2>
 <?php 
 echo $this->Form->create('Contact');

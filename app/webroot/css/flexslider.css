@@ -1,0 +1,54 @@
+/*.slider{margin-left:360px;}*/
+
+ /* Browser Resets */
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;} 
+
+ 
+/* FlexSlider Necessary Styles
+*********************************/ 
+.flexslider {margin: 0; padding: 0; position:relative;}
+.flexslider .slides > li {display: none;\max-width:960px; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img {display: block;}
+.flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;} 
+html[xmlns] .slides {display: block;} 
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+/* Control Nav */
+.flex-control-nav {text-align: center; padding:10px 0; clear:both;}
+.flex-control-nav li {margin: 0 6px; display: inline-block; zoom: 1; *display: inline;}
+.flex-control-paging li a {width: 11px; height: 16px; display: block; cursor: pointer; float:left; color: #909195;}
+.flex-control-paging li a.flex-active{font-weight:bold;}
+.flex-control-paging li a:hover { color: #909195;}
+
+/* Direction Nav */
+.flex-direction-nav {clear: both;
+    height: 1px;
+    /*margin: -27px 0 0;8*/
+	text-align:center;
+	}
+.flex-direction-nav li {display:inline-block; *display: inline; width:10px; position:relative;}
+.flex-direction-nav a {width: 10px; height: 20px; margin: 0; display: block; background: url(../img/nav.png) no-repeat 0 0;  cursor: pointer; text-indent: -9999px; z-index:10;}
+.flex-direction-nav .flex-next { background-position: 100% 0; position: relative;}
+.flex-direction-nav .flex-prev {position: relative;}
+.flex-direction-nav .flex-disabled {opacity: .3!important; filter:alpha(opacity=30); cursor: default;}
+
+@media screen and (max-width: 860px) {
+.slider{margin-left:0px; clear:both; }
+.flexslider .slides img {display: block; width:100%;}
+.flex-direction-nav .flex-prev {opacity: 1; left: 0;}
+.flex-direction-nav .flex-next {opacity: 1; right: 0;}
+}
