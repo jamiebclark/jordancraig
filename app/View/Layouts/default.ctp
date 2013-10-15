@@ -66,8 +66,8 @@ $pageNav = array(
 	echo $this->fetch('css');
 	echo $this->fetch('script');?>
 </head>
-<body>
 <div id="page">
+<body>
 	<div class="inner">
 		<div class="mast">
 <?php 
@@ -83,33 +83,50 @@ $pageNav = array(
 			<ul class="social">
 			<?php
 				$count = 0;
-				$total = count($socialNav);
+				$total = count($socialNav) ;
 				foreach ($socialNav as $alt => $info) {
 					list($img, $url) = $info;
 					$class = null;
 					if ($count++ == 0) {
-						$class = 'last';
-					} else if ($count == $total) {
 						$class = 'first';
+					} else if ($count == $total) {
+						$class = 'last';
 					}
-					echo $this->Html->tag('li', $this->Html->image($img, compact('url', 'alt'), compact('class')))."\n";
+					echo $this->Html->tag('li', 
+						$this->Html->image($img, compact('url', 'alt')),
+						compact('class')
+					) . "\n";
 				}
 			?>
 			</ul>
 			<ul id="nav" class="nav"><?php
 				$count = 0;
 				$total = count($pageNav);
+				$params = $this->request->params;	//Store this for easier reading later
 				foreach ($pageNav as $title => $url) {
-					$class = null;
+					$urlOptions = compact('title');
+					$liOptions = array('class' => '');
 					if ($count++ == 0) {
-						$class = 'first';
+						$liOptions['class'] .= 'first ';
 					} else if ($count == $total) {
-						$class = 'last';
+						$liOptions['class'] .= 'last ';
 					}
-					if ($this->request->params['controller'] == $url['controller'] && $this->request->params['action'] == $url['action']) {
-						$class .= 'selected';
+					
+					$navMatch = false;
+					if ($params['controller'] == 'pages') {	//Url is a static page using Pages controller
+						$navMatch = !empty($params['pass'][0]) && !empty($url[0]) && $params['pass'][0] == $url[0];
+					} elseif (is_array($url)) { //URL is CakePHP model/controller
+						$navMatch = $params['controller'] == $url['controller'] && $params['action'] == $url['action'];
 					}
-					echo $this->Html->tag('li', $this->Html->link($title, $url, compact('title')), compact('class'))."\n";
+					
+					if ($navMatch) {
+						$liOptions['class'] .= 'selected';
+						$urlOptions['class'] = 'active';
+					}
+					echo $this->Html->tag('li', 
+						$this->Html->link($title, $url, $urlOptions), 
+						$liOptions
+					) . "\n";
 				}
 			?>
 			</ul><!-- /end .nav -->
