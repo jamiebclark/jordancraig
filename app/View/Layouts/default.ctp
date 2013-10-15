@@ -111,9 +111,11 @@ $pageNav = array(
 					} else if ($count == $total) {
 						$liOptions['class'] .= 'last ';
 					}
-					if ($params['controller'] == 'pages') {
+					
+					$navMatch = false;
+					if ($params['controller'] == 'pages') {	//Url is a static page using Pages controller
 						$navMatch = !empty($params['pass'][0]) && !empty($url[0]) && $params['pass'][0] == $url[0];
-					} else {
+					} elseif (is_array($url)) { //URL is CakePHP model/controller
 						$navMatch = $params['controller'] == $url['controller'] && $params['action'] == $url['action'];
 					}
 					
