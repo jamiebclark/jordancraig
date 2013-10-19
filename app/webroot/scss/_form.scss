@@ -48,7 +48,9 @@ form {
 	.error {
 		background-color: $errorBackgroundColor;
 		padding: $paddingSmall;
-		
+		.error-message {
+			color: $errorColor;
+		}
 		label {
 			color: $errorColor;
 		}
