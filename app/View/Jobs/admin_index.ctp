@@ -4,7 +4,7 @@
 	<li><?php echo $this->Html->link('View public page', array('admin' => false, 'action' => 'index')); ?></li>
 </ul>
 <?php echo $this->element('jobs/paginate_nav'); ?>
-<table>
+<table class="table-index">
 <tr>
 	<th>Job Title</th>
 	<th>Category</th>

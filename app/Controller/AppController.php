@@ -35,6 +35,10 @@ class AppController extends Controller {
 	var $components = array(
 		'FormData.FormData',
 		'Session',
+		'PasswordProtect.PasswordProtect' => array(
+			'password' => 'jordan_craig',
+			'defaultUrl' => array('controller' => 'job_applications', 'action' => 'index', 'admin' => true),
+		),
 		'MobileRedirect' => array(
 			//Add redirects if necessary
 			'mobileRedirect' => null,

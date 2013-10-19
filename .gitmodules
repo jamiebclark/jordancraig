@@ -1,0 +1,6 @@
+[submodule "app/Plugin/PasswordProtect"]
+	path = app/Plugin/PasswordProtect
+	url = https://github.com/jamiebclark/PasswordProtect.git
+[submodule "app/Plugin/Layout"]
+	path = app/Plugin/Layout
+	url = https://github.com/jamiebclark/Layout.git

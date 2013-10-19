@@ -1,2 +1,2 @@
 <?php
-echo $this->element('job_applications/admin_form');
+echo $this->element('job_applications/form');

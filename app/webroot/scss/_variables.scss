@@ -1,0 +1,24 @@
+//Colors
+$infoColor: 				blue;
+$infoBackgroundColor: 		lighten($infoColor, 45%);
+$successColor: 				green;
+$successBackgroundColor: 	#C9D5C8;
+$errorColor: 				red;
+$errorBackgroundColor: 		lighten($errorColor, 45%);
+
+//Basic CSS styles 
+$backgroundColor: 		#EEE !default;
+$paddingSmall: 			4px 5px !default;
+$paddingLarge:			10px 15px !default;
+$baseLineHeight:		20px !default;
+$baseBorderRadius:		4px !default;
+
+//Form variables
+$labelWidth: 			160px !default;
+$maxFormWidth: 			760px !default;
+$inputTopPadding:		4px !default;
+$inputLeftPadding:		8px !default;
+$inputOuterPadding:		4px !default;
+$requiredColor: 		#300000 !default;
+
+

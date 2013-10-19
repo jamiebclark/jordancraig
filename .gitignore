@@ -1,8 +1,8 @@
 /app/webroot/.sass-cache/
 
-/app/webroot/files/resume/*
-!/app/webroot/files/resume/
-!/app/webroot/files/resume/empty
+/app/webroot/files/resumes/*
+!/app/webroot/files/resumes/
+!/app/webroot/files/resumes/empty
 
 # User specific & automatically generated files #
 #################################################

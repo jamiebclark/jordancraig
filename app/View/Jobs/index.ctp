@@ -21,7 +21,7 @@ if (empty($jobs)): ?>
 //Jobs table
 else: ?>
 	<?php echo $this->element('jobs/paginate_nav'); ?>
-	<table>
+	<table class="table-index">
 	<tr>
 		<th><?php echo $this->Paginator->sort('Job.title', 'Title'); ?></th>
 		<th><?php echo $this->Paginator->sort('JobCategory.title', 'Category'); ?></th>

@@ -33,6 +33,7 @@ App::uses('Model', 'Model');
  */
 class AppModel extends Model {
 	public $actsAs = array(
+		'Containable',
 		'BlankDelete',	//You need to declare this in AppModel for it to work in child models
 	);
 }

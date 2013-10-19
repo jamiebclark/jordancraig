@@ -31,17 +31,17 @@ $socialNav = array(
 
 /**
  * Page Navigation Links
- * Store the page navigation links here. Use the link text as the key, and the URL as the value
+ * Store the page navigation links here. Each navigation entry should be an array($text, $url, $options (optional))
  **/
 $pageUrl = array('controller' => 'pages', 'action' => 'display', 'admin' => false);	//Prevents us from having to re-type
 $pageNav = array(
-	'Home' => $pageUrl + array('home'),
-	'About' => $pageUrl + array('about'),
-	'Legacy Edition' => $pageUrl + array('legacy'),
-	'Lookbook' => $pageUrl + array('lookbook'),
-	'Campaign' => $pageUrl + array('campaign'),
-	'Media' => $pageUrl + array('media'),
-	'Contact' => array('controller' => 'contacts', 'action' => 'index', 'admin' => false),
+	array('Home', $pageUrl + array('home')),
+	array('About', $pageUrl + array('about')),
+	array('Legacy Edition', $pageUrl + array('legacy')),
+	array('Lookbook', $pageUrl + array('lookbook')),
+	array('Campaign', $pageUrl + array('campaign')),
+	array('Media', $pageUrl + array('media')),
+	array('Contact', array('controller' => 'contacts', 'action' => 'index', 'admin' => false))
 );
 ?>
 <?php echo $this->Html->docType('html4-trans')."\n";?>
@@ -52,7 +52,7 @@ $pageNav = array(
 	echo $this->Html->meta(array('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no'))."\n";?>
 <title><?php echo $title_for_layout;?></title>
 <?php
-	echo $this->Html->meta('icon', '/icon.ico');
+	echo $this->Html->meta('icon', Router::url('/img/icon.ico'));
 	echo $this->Html->script(array('http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js','tinynav.min.js?v=1.11', 'resize'));
 	echo $this->Html->css(array('layout','styles'));?>
 	<!--[if IE 7]>
@@ -99,37 +99,8 @@ $pageNav = array(
 				}
 			?>
 			</ul>
-			<ul id="nav" class="nav"><?php
-				$count = 0;
-				$total = count($pageNav);
-				$params = $this->request->params;	//Store this for easier reading later
-				foreach ($pageNav as $title => $url) {
-					$urlOptions = compact('title');
-					$liOptions = array('class' => '');
-					if ($count++ == 0) {
-						$liOptions['class'] .= 'first ';
-					} else if ($count == $total) {
-						$liOptions['class'] .= 'last ';
-					}
-					
-					$navMatch = false;
-					if ($params['controller'] == 'pages') {	//Url is a static page using Pages controller
-						$navMatch = !empty($params['pass'][0]) && !empty($url[0]) && $params['pass'][0] == $url[0];
-					} elseif (is_array($url)) { //URL is CakePHP model/controller
-						$navMatch = $params['controller'] == $url['controller'] && $params['action'] == $url['action'];
-					}
-					
-					if ($navMatch) {
-						$liOptions['class'] .= 'selected';
-						$urlOptions['class'] = 'active';
-					}
-					echo $this->Html->tag('li', 
-						$this->Html->link($title, $url, $urlOptions), 
-						$liOptions
-					) . "\n";
-				}
-			?>
-			</ul><!-- /end .nav -->
+			<?php echo $this->JordanCraig->navList($pageNav, array('id' => 'nav', 'class' => 'nav')); ?>
+		<!-- /end .nav -->
 		</div><!-- /end .mast -->
 		<div class="section main">
 			<?php 
@@ -140,16 +111,14 @@ $pageNav = array(
 			<?php echo $this->Session->flash();?>
 			<?php echo $this->fetch('content'); ?>
 		</div>	
+		
 		<div class="footer">
 			<p>&#169; Brian Brothers Inc. 2013. All Rights Reserved.</p>
+			<?php echo $this->element('login'); ?>
+			
 		</div><!-- /end .footer -->
 	</div><!-- /end .inner -->
 </div><!-- /end #page -->
-
-<?php 
-//todo: remove this before page launch
-echo $this->element('sql_dump');
-?>
 
 <script type="text/javascript">
 	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

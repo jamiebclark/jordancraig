@@ -14,25 +14,4 @@ $this->Html->addCrumb($job['Job']['title']);
 		'Are you sure you want to delete this job listing?'
 	); ?></li>
 </ul>
-<dl>
-	<dt>Category</dt>
-	<dd><?php echo $job['JobCategory']['title']; ?></dd>
-	
-	<dt>Overview</dt>
-	<dd><?php echo nl2br($job['Job']['overview']); ?></dd>
-	
-	<dt>Responsibilities</dt>
-	<dd><?php echo nl2br($job['Job']['responsibilities']); ?></dd>
-
-	<dt>Qualifications</dt>
-	<dd><?php echo nl2br($job['Job']['qualifications']); ?></dd>
-	
-	<dt>Active</dt>
-	<dd><?php 
-		if ($job['Job']['active']) {
-			echo 'Active';
-		} else {
-			echo 'Not Active';
-		}
-	?></dd>
-</dl>
+<?php echo $this->Job->listView($job); ?>

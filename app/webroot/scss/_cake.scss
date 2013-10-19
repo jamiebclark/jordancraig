@@ -1,0 +1,60 @@
+//Cake information
+.cake-error {
+	display: block;
+	clear: both;
+	padding: 20px;
+	margin: 20px;
+}
+
+#crumbs {
+	clear: both;
+	padding: $paddingSmall;
+	background: $backgroundColor;
+	margin-bottom: $baseLineHeight / 2;
+	font-size: 12px;
+	line-height: $baseLineHeight;
+	a {
+		margin-right: 5px;
+	}
+}
+
+//Styles a Session message
+@mixin flashMessageStyle($className, $baseColor, $backgroundColor: false) {
+	//If you don't set a background, it just lightens the base color
+	@if ($backgroundColor == false) {
+		$backgroundColor: lighten($baseColor, 45%);
+	}
+	.#{$className} {
+		color: $baseColor;
+		border-color: $baseColor;
+		background-color: $backgroundColor;
+	}
+}
+
+//Displays Session alert information
+#flashMessage, .alert {
+	clear: both;
+	display: block;
+	float: none;
+	padding: $paddingLarge;
+	margin: 10px;
+	border: 1px solid #CCC;
+	border-radius: $baseBorderRadius;
+	a.close {
+		float: right;
+	}
+}
+
+@include flashMessageStyle("alert-info", $infoColor, $infoBackgroundColor);
+@include flashMessageStyle("alert-success", $successColor, $successBackgroundColor);
+@include flashMessageStyle("alert-error", $errorColor, $errorBackgroundColor);
+
+.alert-info {
+	color: blue;
+}
+.alert-success {
+	color: green;
+}
+.alert-error {
+	color: red;
+}

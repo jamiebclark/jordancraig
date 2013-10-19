@@ -15,6 +15,30 @@ class JobApplicationHelper extends AppHelper {
 		return trim($name);
 	}
 	
+	public function address($result, $lineBreak = ", ") {
+		$lines = array(
+			array('addline1'),
+			array('addline2'),
+			array('city', 'state', 'zip', 'country'),
+		);
+		$out = '';
+		foreach ($lines as $line) {
+			$lineOut = '';
+			foreach ($line as $field) {
+				if (!empty($result[$field])) {
+					if (!empty($lineOut)) {
+						$lineOut .= ', ';
+					}
+					$lineOut .= $result[$field];
+				}
+			}
+			if (!empty($lineOut)) {
+				$out .= "$lineOut$lineBreak\n";
+			}
+		}
+		return $out;
+	}
+	
 	public function downloadLink($result = array()) {
 		if ($url = $this->downloadUrl($result)) {
 			return $this->Html->link('Download', $url, array('class' => 'download'));

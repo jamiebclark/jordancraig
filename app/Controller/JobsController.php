@@ -118,7 +118,7 @@ class JobsController extends AppController {
 			$msg = 'There was an error deleting job';
 			$class = 'alert-error';
 		}
-		$this->Sesstion->setFlash($msg, 'default', compact('class'));
+		$this->Session->setFlash($msg, 'default', compact('class'));
 		$this->redirect(array('action' => 'index'));
 	}
 	

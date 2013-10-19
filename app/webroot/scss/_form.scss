@@ -1,0 +1,59 @@
+form {
+	max-width: $maxFormWidth;
+	float: none;
+	margin: 0 auto;
+	width: 100%;
+	
+	fieldset {
+		display: block;
+		margin-bottom: $baseLineHeight / 2;
+		legend { 
+			display: block;
+			background-color: black;
+			color: white;
+			line-height: $baseLineHeight;
+			padding: $paddingSmall;
+			width: 100%;
+		}
+	}
+	label {
+		display: block;
+		float: none;
+	}
+	.text,
+	.textarea,
+	.select,
+	.email {
+		padding: $inputOuterPadding;
+		padding-right: 2 * $inputLeftPadding + 2 * $inputOuterPadding;
+		input, select, textarea {
+			display: block;
+			width: 100%;
+			padding: $inputTopPadding $inputLeftPadding;
+		}
+	}
+	.required {
+		label {
+			color: $requiredColor;
+			&:after {
+				content: " *";
+				color: red;
+				font-weight: bold;
+			}
+		}
+		input, select, textarea {
+			border-color: $requiredColor;
+		}
+	}
+	.error {
+		background-color: $errorBackgroundColor;
+		padding: $paddingSmall;
+		
+		label {
+			color: $errorColor;
+		}
+		input, select, textarea {
+			border-color: $errorColor;
+		}
+	}
+}	

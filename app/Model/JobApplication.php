@@ -3,6 +3,8 @@ class JobApplication extends AppModel {
 	public $name = 'JobApplication';
 	public $belongsTo = array('JobApplicant', 'Job');
 	
+	public $order = array('JobApplication.created' => 'DESC');
+	
 	private $uploadDir;					//Directory where to store resumes
 	private $uploadField = 'upload';	//The data field where the passed file will be stored
 	private $validResumeExtensions = array('doc', 'docx', 'pdf', 'txt');		//The valid extension types
@@ -52,6 +54,9 @@ class JobApplication extends AppModel {
 	}
 	
 	public function afterSave($created) {
+		if ($created) {
+			$this->sendAdminEmail($this->id);
+		}
 		$this->copyResumeFile($this->id);		//Looks to see if a resume file was uploaded with the save
 		return parent::afterSave($created);
 	}
@@ -83,6 +88,23 @@ class JobApplication extends AppModel {
 		return null;
 	}
 	
+	//Checks if the submitted job is part of a category that receives an automated email
+	private function sendAdminEmail($id) {
+		$result = $this->find('first', array(
+			'contain' => array('Job' => array('JobCategory')),
+			'conditions' => array($this->escapeField($this->primaryKey) => $id)
+		));
+		if (!empty($result['Job']['JobCategory']['email'])) {
+			$to = $result['Job']['JobCategory']['email'];
+			$subject = "A new application has been submitted: {$result['Job']['title']}";
+			$message = "An applicant has submitted a new job application for '{$result['Job']['title']}'. It is viewable at the following link:\n";
+			$message .= Router::url(array('controller' => 'job_applications', 'action' => 'view', $result[$this->alias]['id'], 'admin' => true), true) . "\n";
+			return mail($to, $subject, $message);
+		}
+		return null;
+	}
+	
+	//Returns the file extension from a filename string
 	private function getFileExtension($file) {
 		$parts = pathinfo($file);
 		return $parts['extension'];

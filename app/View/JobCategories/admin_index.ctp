@@ -5,7 +5,8 @@ echo $this->element('index_form', array(
 	'rowFunction' => function($i) use ($View) {
 		$prefix = "JobCategory.$i.";
 		$out =  $View->Form->hidden($prefix . 'id');
-		$out .= $View->Html->tag('td', $View->Form->input($prefix . 'title'));
+		$out .= $View->Html->tag('td', $View->Form->input($prefix . 'title', array('label' => false)));
+		$out .= $View->Html->tag('td', $View->Form->input($prefix . 'email', array('label' => false, 'placeholder' => 'example@example.org')));
 
 		$removeCell = '';
 		if ($View->Html->value($prefix . 'id')) {
@@ -19,5 +20,6 @@ echo $this->element('index_form', array(
 		}
 		$out .= $View->Html->tag('td', $removeCell);
 		echo $View->Html->tag('tr', $out);
-	}
+	},
+	'headings' => array('Title', 'Email on Submit', 'Remove'),
 ));
