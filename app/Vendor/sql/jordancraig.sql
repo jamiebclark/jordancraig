@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 19, 2013 at 07:58 PM
+-- Generation Time: Oct 20, 2013 at 07:17 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -19,6 +19,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `jordancraig`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `inquiries`
+--
+
+CREATE TABLE IF NOT EXISTS `inquiries` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `is_wholesale` tinyint(1) NOT NULL,
+  `name` varchar(128) NOT NULL,
+  `email` varchar(128) NOT NULL,
+  `phone` varchar(25) DEFAULT NULL,
+  `message` text NOT NULL,
+  `store_name` varchar(128) DEFAULT NULL,
+  `store_address` varchar(255) DEFAULT NULL,
+  `website` varchar(128) DEFAULT NULL,
+  `sent` tinyint(1) NOT NULL DEFAULT '0',
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
 
 -- --------------------------------------------------------
 

@@ -3,6 +3,15 @@ class JobsController extends AppController {
 	public $name = 'Jobs';
 	public $helpers = array('Job');
 	
+	function beforeRender() {
+		parent::beforeRender();
+		
+		//Makes sure to change layout of non-admin views to include Inquiry navigation menu
+		if (empty($this->request->params['prefix'])) {
+			$this->layout = 'inquiry_nav';
+		}
+	}
+	
 	function index() {
 		//Finds Job Categories
 		$jobCategories = $this->Job->JobCategory->find('list');
@@ -55,6 +64,8 @@ class JobsController extends AppController {
 		$job = $this->Job->find('first', array(
 			'conditions' => array('Job.id' => $id)
 		));
+		$this->set('title_for_layout', $job['Job']['title']);
+		
 		$this->set(compact('job'));
 	}
 	

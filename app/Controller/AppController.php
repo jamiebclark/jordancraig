@@ -50,11 +50,19 @@ class AppController extends Controller {
 			'redirect' => array('controller' => 'pages', 'action' => 'display', 'coming_soon'),
 		)
 	);
-	var $helpers = array('Html', 'Form', 'JordanCraig');
+	var $helpers = array(
+		'Form', 
+		'Html', 
+		'JordanCraig',
+		'Layout.Crumbs' => array('hide' => true),
+		'Layout.Table',
+	);
 	
 	public function beforeRender() {
+		//Admin-prefix specific rendering
 		if (!empty($this->request->params['prefix']) && $this->request->params['prefix'] == 'admin') {
 			$this->layout = 'admin';
+			$this->helpers['Layout.Crumbs']['hide'] = false;
 		}
 		return parent::beforeRender();
 	}

@@ -47,7 +47,7 @@
 		'lookbook', 
 		'campaign', 
 		'media', 
-		'contact' => array('controller' => 'contacts', 'action' => 'index')
+		'contact' => array('controller' => 'inquiries', 'action' => 'index')
 	);
 	foreach ($htmlLinks as $find => $redirect) {
 		if (is_numeric($find)) {
@@ -58,7 +58,7 @@
 		}
 		Router::connect("/$find.html", $redirect);
 	}
-	Router::connect('/contact/', array('controller' => 'contacts', 'action' => 'index', 'admin' => false));
+	Router::connect('/contact/', array('controller' => 'inquiries', 'action' => 'index', 'admin' => false));
 
 /**
  * Load the CakePHP default routes. Only remove this if you do not want to use

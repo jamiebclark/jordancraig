@@ -6,15 +6,16 @@
 	margin: 20px;
 }
 
-#crumbs {
+.crumbs {
 	clear: both;
 	padding: $paddingSmall;
 	background: $backgroundColor;
 	margin-bottom: $baseLineHeight / 2;
 	font-size: 12px;
 	line-height: $baseLineHeight;
-	a {
-		margin-right: 5px;
+	font {
+		font-size: 10px;
+		margin: 0 5px;
 	}
 }
 

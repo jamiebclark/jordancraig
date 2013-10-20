@@ -41,7 +41,7 @@ $pageNav = array(
 	array('Lookbook', $pageUrl + array('lookbook')),
 	array('Campaign', $pageUrl + array('campaign')),
 	array('Media', $pageUrl + array('media')),
-	array('Contact', array('controller' => 'contacts', 'action' => 'index', 'admin' => false))
+	array('Contact', array('controller' => 'inquiries', 'action' => 'index', 'admin' => false))
 );
 ?>
 <?php echo $this->Html->docType('html4-trans')."\n";?>
@@ -77,7 +77,7 @@ $pageNav = array(
             'width' => 190,
             'alt' => 'Jordan Craig',
             )),
-            array('controller' => 'pages', 'action' => 'display', 'home'),
+            array('controller' => 'pages', 'action' => 'display', 'home', 'admin' => false),
             array('escape' => false, 'class' => 'logo'));
 ?>
 			<ul class="social">
@@ -104,9 +104,8 @@ $pageNav = array(
 		</div><!-- /end .mast -->
 		<div class="section main">
 			<?php 
-				if ($crumbs = $this->Html->getCrumbs()) {
-					echo $this->Html->div(null, $crumbs, array('id' => 'crumbs'));
-				}
+				//Breadcrumbs
+				echo $this->Crumbs->output();
 			?>
 			<?php echo $this->Session->flash();?>
 			<?php echo $this->fetch('content'); ?>
