@@ -43,6 +43,11 @@ dl {
 		text-align: center;
 	}
 }
+tr.altrow {
+	&, td {
+		background-color: #EEE;
+	}
+}
 
 // Basic Table for Indexes
 // --------------------------------------
