@@ -32,6 +32,7 @@ class BlankDeleteBehavior extends ModelBehavior {
 			}
 			$this->settings[$Model->alias] = $settings;
 		}
+		return parent::setup($Model, $settings);
 	}
 	
 	function beforeValidate(Model $Model, $options = array()) {
@@ -45,11 +46,11 @@ class BlankDeleteBehavior extends ModelBehavior {
 		return parent::beforeSave($Model, $options);
 	}
 	
-	function afterSave(Model $Model, $created) {
+	function afterSave(Model $Model, $created, $options = array()) {
 		if ($this->confirmDelete) {
 			$Model->delete($Model->id);
 		}
-		return parent::afterSave($Model, $created);
+		return parent::afterSave($Model, $created, $options);
 	}
 
 /**

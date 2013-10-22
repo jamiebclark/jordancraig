@@ -53,12 +53,12 @@ class JobApplication extends AppModel {
 		parent::beforeSave($options);
 	}
 	
-	public function afterSave($created) {
+	public function afterSave($created, $options = array()) {
 		if ($created) {
 			$this->sendAdminEmail($this->id);
 		}
 		$this->copyResumeFile($this->id);		//Looks to see if a resume file was uploaded with the save
-		return parent::afterSave($created);
+		return parent::afterSave($created, $options);
 	}
 	
 	public function beforeDelete($cascade = true) {

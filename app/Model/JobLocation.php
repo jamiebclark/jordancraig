@@ -9,9 +9,9 @@ class JobLocation extends AppModel {
 		)
 	);
 	
-	public function afterSave($created) {
+	public function afterSave($created, $options = array()) {
 		$this->setTitle($this->id);
-		return parent::afterSave($created);
+		return parent::afterSave($created, $options);
 	}
 	
 	private function setTitle($id) {

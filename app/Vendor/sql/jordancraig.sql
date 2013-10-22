@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
+-- version 4.0.4
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 20, 2013 at 07:17 PM
+-- Generation Time: Oct 22, 2013 at 02:02 AM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `jordancraig`
 --
+CREATE DATABASE IF NOT EXISTS `jordancraig` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `jordancraig`;
 
 -- --------------------------------------------------------
 
@@ -26,6 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `inquiries`
 --
 
+DROP TABLE IF EXISTS `inquiries`;
 CREATE TABLE IF NOT EXISTS `inquiries` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `is_wholesale` tinyint(1) NOT NULL,
@@ -48,6 +51,7 @@ CREATE TABLE IF NOT EXISTS `inquiries` (
 -- Table structure for table `jobs`
 --
 
+DROP TABLE IF EXISTS `jobs`;
 CREATE TABLE IF NOT EXISTS `jobs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `job_category_id` int(11) NOT NULL,
@@ -62,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `jobs` (
   PRIMARY KEY (`id`),
   KEY `job_category_id` (`job_category_id`),
   KEY `job_location_id` (`job_location_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 -- --------------------------------------------------------
 
@@ -70,6 +74,7 @@ CREATE TABLE IF NOT EXISTS `jobs` (
 -- Table structure for table `job_applicants`
 --
 
+DROP TABLE IF EXISTS `job_applicants`;
 CREATE TABLE IF NOT EXISTS `job_applicants` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(64) DEFAULT NULL,
@@ -95,6 +100,7 @@ CREATE TABLE IF NOT EXISTS `job_applicants` (
 -- Table structure for table `job_applications`
 --
 
+DROP TABLE IF EXISTS `job_applications`;
 CREATE TABLE IF NOT EXISTS `job_applications` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `job_id` int(11) NOT NULL,
@@ -113,6 +119,7 @@ CREATE TABLE IF NOT EXISTS `job_applications` (
 -- Table structure for table `job_categories`
 --
 
+DROP TABLE IF EXISTS `job_categories`;
 CREATE TABLE IF NOT EXISTS `job_categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(128) NOT NULL,
@@ -126,6 +133,7 @@ CREATE TABLE IF NOT EXISTS `job_categories` (
 -- Table structure for table `job_locations`
 --
 
+DROP TABLE IF EXISTS `job_locations`;
 CREATE TABLE IF NOT EXISTS `job_locations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(128) NOT NULL,
