@@ -14,7 +14,7 @@ class BlankDeleteBehavior extends ModelBehavior {
 	//This keeps track of which models actually have BlankDelete behavior settings
 	private $hasBlankDelete = array();
 	
-	function setup($Model, $settings = array()) {
+	function setup(Model $Model, $settings = array()) {
 		if (!empty($settings)) {
 			$this->hasBlankDelete[$Model->alias] = true;
 			if (!isset($this->settings[$Model->alias])) {
