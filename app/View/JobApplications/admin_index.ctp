@@ -1,50 +1,33 @@
 <h1>Job Applications</h1>
-<?php if (empty($jobApplications)): ?>
-	<p><em>No job applications submitted yet</em></p>
-<?php else: ?>
-	<?php echo $this->element('paginate_nav'); ?>
-	<table class="table-index">
-	<tr>
-		<th>Name</th>
-		<th>Job</th>
-		<th>Date</th>
-		<th>Resume</th>
-		<th>Actions</th>
-	</tr>
-	<?php foreach ($jobApplications as $jobApplication): ?>
-		<tr>
-			<td><?php
-				echo $this->Html->link(
-					$this->JobApplication->name($jobApplication['JobApplicant']),
-					array('action' => 'view', $jobApplication['JobApplication']['id'])
-				);
-				?>
-			</td>
-			<td><?php
-				echo $this->Html->link(
-					$jobApplication['Job']['title'],
-					array('controller' => 'jobs', 'action' => 'view', $jobApplication['Job']['id']),
-					array('class' => 'secondary')
-				);
-				?>
-			</td>
-			<td><?php
-				echo $this->Time->niceShort($jobApplication['JobApplication']['created']);
-			?></td>
-			<td><?php
-				echo $this->JobApplication->downloadLink($jobApplication['JobApplication']);
-			?></td>
-			<td><ul class="actions">	
-				<li><?php echo $this->Html->link('Edit', array('action' => 'edit', $jobApplication['JobApplication']['id'])); ?></li>
-				<li><?php echo $this->Html->link(
-					'Delete', 
-					array('action' => 'delete', $jobApplication['JobApplication']['id']),
-					null,
-					'Delete this application?'
-				); ?></li>
-			</ul></td>
-		</tr>
-	<?php endforeach; ?>
-	</table>
-	<?php echo $this->element('paginate_nav'); ?>
-<?php endif; ?>
+<?php
+$this->Table->reset();
+foreach ($jobApplications as $jobApplication):
+	$id = $jobApplication['JobApplication']['id'];			//Save us having to retype this a bunch
+	$applicationUrl = array('action' => 'view', $id);		//Link to job application
+	$jobUrl = array('controller' => 'jobs', 'action' => 'view', $jobApplication['Job']['id']);
+	
+	$actions = '<ul class="actions">	
+		<li>' . $this->Html->link('Edit', array('action' => 'edit', $id)) . '</li>
+		<li>' . $this->Html->link('Delete', array('action' => 'delete', $id), null, 'Delete this application?') . '</li>
+	</ul>';
+	
+	$this->Table->cells(array(
+		array(
+			$this->Html->link($this->JobApplication->name($jobApplication['JobApplicant']), $url),
+			'Name', 'JobApplicant.last_name',
+		), array(
+			$this->Html->link($jobApplication['Job']['title'], $jobUrl, array('class' => 'secondary')),
+			'Job', 'Job.title'
+		),
+		array($this->Time->niceShort($jobApplication['JobApplication']['created']), 'Date', 'created'), 
+		array($this->JobApplication->downloadLink($jobApplication['JobApplication']), 'Resume'), 
+		array($actions, 'Actions')
+	), true);
+endforeach;
+
+//Output Table
+echo $this->Table->output(array(
+	'class' => 'table-index',
+	'paginate' => true,
+	'empty' => '<p class="table-message">No job applications have been submitted at this time.</p>',
+));

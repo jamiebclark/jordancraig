@@ -1,5 +1,6 @@
 <?php
 $adding = !$this->Html->value('Job.id');	//Is this form adding or editing and existing value?
+$bulletNote = '<span class="input-note">Bulleted list. Hit ENTER to start a new bullet point</span>';
 if ($adding) {
 	$legend = 'New Job Listing';
 	$title = 'Add a job';
@@ -19,10 +20,14 @@ echo $this->Form->inputs(array(
 	'job_category_id',
 	'job_location_id', 
 	'overview',
-	'responsibilities',
-	'qualifications',
+	'responsibilities' => array(
+		'between' => $bulletNote,
+	),
+	'qualifications' => array(
+		'between' => $bulletNote,
+	),
 	'active' => array(
-		'after' => ' <span class="append">Is this job listing ready to be displayed publicly?</span>',
+		'after' => ' <span class="input-note">Is this job listing ready to be displayed publicly?</span>',
 	),
 	
 	'legend' => $legend,

@@ -13,4 +13,5 @@ foreach ($inquiries as $inquiry) {
 echo $this->Table->output(array(
 	'paginate' => true,
 	'class' => 'table-index',
+	'empty' => '<p class="table-message">No inquiries have been made at this time.</p>',
 ));

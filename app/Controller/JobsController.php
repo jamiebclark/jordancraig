@@ -82,12 +82,14 @@ class JobsController extends AppController {
 	}
 	
 	function admin_add() {
-		if (!empty($this->request->data)) {
+		if (!empty($this->request->data)) {	//Detects information has been submitted
 			if ($this->Job->saveAll($this->request->data)) {
+				//Successfully saved job information
 				$msg = 'Successfully added job';
 				$class = 'alert-success';
 				$redirect = array('action' => 'view', $this->Job->id);
 			} else {
+				//Failed saving job information
 				$msg = 'There was an error updating job';
 				$class = 'alert-error';
 				$redirect = null;
@@ -96,7 +98,11 @@ class JobsController extends AppController {
 			if (!empty($redirect)) {
 				$this->redirect($redirect);
 			}
+		} else {
+			//If no data has been posted, set default values
+			$this->request->data = array('Job' => array('active' => 1));
 		}
+		
 		$this->_setFormElements();
 	}
 	
@@ -123,9 +129,11 @@ class JobsController extends AppController {
 	
 	function admin_delete($id = null) {
 		if ($this->Job->delete($id)) {
+			//Successfully deleted the job
 			$msg = 'Successfully deleted job';
 			$class = 'alert-success';
 		} else {
+			//Failed to delete the job
 			$msg = 'There was an error deleting job';
 			$class = 'alert-error';
 		}
@@ -133,6 +141,7 @@ class JobsController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
 	
+	//Sets variable information to be used in dropdown menus in the add and edit forms
 	function _setFormElements() {
 		$jobCategories = $this->Job->JobCategory->find('list');
 		$jobLocations = $this->Job->JobLocation->find('list');

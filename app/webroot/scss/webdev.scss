@@ -49,6 +49,14 @@ tr.altrow {
 	}
 }
 
+p.table-message {
+	font-size: 2em;
+	display: block;
+	text-align: center;
+	margin: 20px;
+	font-style: italic;
+}
+
 // Basic Table for Indexes
 // --------------------------------------
 .table-index {
@@ -91,6 +99,7 @@ ul.actions {
 		&:hover {
 			background-color: #CCC;
 			color: white;
+			font-weight: normal;
 		}
 	}
 	&.actions-menu {

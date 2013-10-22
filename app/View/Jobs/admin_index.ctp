@@ -33,4 +33,5 @@ foreach ($jobs as $job) {
 echo $this->Table->output(array(
 	'paginate' => true,		//Include page numbers
 	'class' => 'table-index',
+	'empty' => 'You haven\'t added any jobs yet',
 ));

@@ -1,6 +1,12 @@
 <?php
 class Job extends AppModel {	
-	var $name = "Job";
-	var $hasMany = array('JobApplication');
-	var $belongsTo = array( "JobCategory", "JobLocation");
+	public $name = "Job";
+	public $hasMany = array('JobApplication');
+	public $belongsTo = array( "JobCategory", "JobLocation");
+	public $validate = array(
+		'title' => array(
+			'rule' => 'notEmpty',
+			'message' => 'Please give the job a title',
+		)
+	);
 }
