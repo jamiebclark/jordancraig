@@ -1,3 +1,6 @@
+[submodule "app/Plugin/FormData"]
+	path = app/Plugin/FormData
+	url = https://github.com/jamiebclark/FormData.git
 [submodule "app/Plugin/PasswordProtect"]
 	path = app/Plugin/PasswordProtect
 	url = https://github.com/jamiebclark/PasswordProtect.git
