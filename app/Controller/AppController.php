@@ -31,6 +31,7 @@ App::uses('Controller', 'Controller');
  * @package		app.Controller
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
+debug($_SERVER);
 class AppController extends Controller {
 	var $components = array(
 		'FormData.FormData',
@@ -57,6 +58,10 @@ class AppController extends Controller {
 		'Layout.Crumbs' => array('hide' => true),
 		'Layout.Table',
 	);
+	
+	public function beforeFilter() {
+		debug($this->request);
+	}
 	
 	public function beforeRender() {
 		//Admin-prefix specific rendering
