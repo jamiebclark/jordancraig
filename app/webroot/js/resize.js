@@ -21,12 +21,9 @@ function adjustStyle(width) {
 		$("#nav").css("display", "block");
     }
 }
-
-
 $(function() {
     adjustStyle($(this).width());
     $(window).resize(function() {
         adjustStyle($(this).width());
     });
 });
-
