@@ -20,9 +20,33 @@ ul.nav a {
 	font-weight: normal;
 	padding: 0 1em;
 	}
+.main h1.job{
+	font-size: 1.5em;
+	margin-top:4em;}
+
+.main h2.job{
+	font-size: 1em;
+	margin: 0.95em 15em  0.5em 3em;
+	margin-left:0;
+	}
+.main h3.job{
+font-size: .85em;
+	margin: 0 15em  0 3em;
+	margin-left:0;
+	}
 .main p{
 	margin: 0.75em 24em  0.5em 4.25em;
 	}
+	.main p.apply{margin:20px 0;}
+.main p.apply a{background: none repeat scroll 0 0 #191919;
+    border: medium none;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-top: 5px;
+	padding:2px;
+	font-size:11px;}	
+	
+.main ul{margin-left:1em;}
 .media li{width:200px; margin: 1em 1.2em;}
 	
 form{width:480px;}

@@ -4,8 +4,9 @@ form.job-filter {
 	float: none;
 }
 </style>
+ <?php echo $this->Html->image("media.jpg"); ?>
 <h2>Job Listings</h2>
-<p>Here are our current job openings. Please click on the job title for more information, and apply from that page if you are interested.</p>
+<p style="margin-right:0;">Here are our current job openings. Please click on the job title for more information, and apply from that page if you are interested.</p>
 <?php 
 //Display if no jobs are found:
 if (empty($jobs)): ?>
@@ -24,9 +25,9 @@ else: ?>
 	<?php echo $this->element('jobs/paginate_nav'); ?>
 	<table class="table-index">
 	<tr>
-		<th><?php echo $this->Paginator->sort('Job.title', 'Title'); ?></th>
-		<th><?php echo $this->Paginator->sort('JobCategory.title', 'Category'); ?></th>
-		<th><?php echo $this->Paginator->sort('JobLocation.title', 'Location'); ?></th>
+		<th class="title"><?php echo $this->Paginator->sort('Job.title', 'Title'); ?></th>
+		<th class="category"><?php echo $this->Paginator->sort('JobCategory.title', 'Category'); ?></th>
+		<th class="location"><?php echo $this->Paginator->sort('JobLocation.title', 'Location'); ?></th>
 		<th>Overview</th>
 	</tr>
 	<?php foreach ($jobs as $job): 
