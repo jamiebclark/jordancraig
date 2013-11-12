@@ -10,6 +10,7 @@
 			<?php echo $this->Html->link('Log out', array('?' => array('logout' => 1)), array('class' => 'login')); ?>
 		</div>
 	<?php else:
-		echo $this->Html->link('Log in', $passwordUrl, array('class' => 'login'));
+		//Nothing is displayed if they're not logged in
+		//echo $this->Html->link('Log in', $passwordUrl, array('class' => 'login'));
 	endif; ?>
 </div>

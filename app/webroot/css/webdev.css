@@ -1,1 +1,195 @@
-.cake-error{display:block;clear:both;padding:20px;margin:20px}.crumbs{clear:both;padding:4px 5px;background:#eee;margin-bottom:10px;font-size:12px;line-height:20px}.crumbs font{font-size:10px;margin:0 5px}#flashMessage,.alert{clear:both;display:block;float:none;padding:10px 15px;margin:10px;border:1px solid #CCC;border-radius:4px}#flashMessage a.close,.alert a.close{float:right}.alert-info{color:blue;border-color:blue;background-color:#e5e5ff}.alert-success{color:green;border-color:green;background-color:#c9d5c8}.alert-error{color:red;border-color:red;background-color:#ffe5e5}.alert-info{color:blue}.alert-success{color:green}.alert-error{color:red}form{max-width:760px;float:none;margin:0 auto;width:100%}form fieldset{display:block;margin-bottom:10px}form fieldset legend{display:block;background-color:black;color:white;line-height:20px;padding:4px 5px;width:100%}form label{display:block;float:none}form .text,form .textarea,form .select,form .email{padding:4px;padding-right:24px}form .text input,form .text select,form .text textarea,form .textarea input,form .textarea select,form .textarea textarea,form .select input,form .select select,form .select textarea,form .email input,form .email select,form .email textarea{display:block;width:100%;padding:4px 8px}form .required label{color:#300000}form .required label:after{content:" *";color:red;font-weight:bold}form .required input,form .required select,form .required textarea{border-color:#300000}form .error{background-color:#ffe5e5;padding:4px 5px}form .error .error-message{color:red}form .error label{color:red}form .error input,form .error select,form .error textarea{border-color:red}form .input-note{font-size:90%;font-style:italic}dl{display:block;padding:10px 15px}dl dd,dl dt{line-height:20px;display:block;padding:4px 5px}dl dt{font-weight:bold}dl dd{padding:10px 15px;padding-top:0}.table-index-form{width:100%}.table-index-form td{border:1px solid #CCC}.add-row-input{overflow:hidden;padding:4px 5px}.add-row-input label,.add-row-input input,.add-row-input button{float:left}.add-row-input input{width:40px;padding:4px 5px;text-align:center}tr.altrow,tr.altrow td{background-color:#EEE}p.table-message{font-size:2em;display:block;text-align:center;margin:20px;font-style:italic}.table-index{width:100%;margin-bottom:10px}ul.top-menu{display:block;clear:both;overflow:hidden}ul.top-menu li,ul.top-menu a{display:inline-block}ul.top-menu a{padding:10px}ul.top-menu li.selected a{font-weight:bold}ul.actions,ul.actions li,ul.actions a{margin:0;padding:0;list-style-type:none;float:left}ul.actions a{display:block;text-decoration:none;padding:5px;margin:4px;border:1px solid;border-radius:4px;background-color:white}ul.actions a:hover{background-color:#CCC;color:white;font-weight:normal}ul.actions.actions-menu{padding:5px;background-color:#eee;float:none;overflow:hidden}
+/* BEGIN CAKE STYLING */
+.cake-error {
+  display: block;
+  clear: both;
+  padding: 20px;
+  margin: 20px; }
+
+.crumbs {
+  clear: both;
+  padding: 4px 5px;
+  background: #eeeeee;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 20px; }
+  .crumbs font {
+    font-size: 10px;
+    margin: 0 5px; }
+
+#flashMessage, .alert {
+  clear: both;
+  display: block;
+  float: none;
+  padding: 10px 15px;
+  margin: 10px;
+  border: 1px solid #CCC;
+  border-radius: 4px; }
+  #flashMessage a.close, .alert a.close {
+    float: right; }
+
+.alert-info {
+  color: blue;
+  border-color: blue;
+  background-color: #e5e5ff; }
+
+.alert-success {
+  color: green;
+  border-color: green;
+  background-color: #c9d5c8; }
+
+.alert-error {
+  color: red;
+  border-color: red;
+  background-color: #ffe5e5; }
+
+.alert-info {
+  color: blue; }
+
+.alert-success {
+  color: green; }
+
+.alert-error {
+  color: red; }
+
+/* END CAKE STYLING */
+/* BEGIN FORM CSS */
+.contact-forms {
+  max-width: none;
+  float: right;
+  margin: 0;
+  width: 55%; }
+
+form {
+  max-width: 760px;
+  float: none;
+  margin: 0 auto;
+  width: 100%; }
+  form fieldset {
+    display: block;
+    margin-bottom: 10px; }
+    form fieldset legend {
+      display: block;
+      background-color: black;
+      color: white;
+      line-height: 20px;
+      padding: 4px 5px;
+      width: 100%; }
+  form label {
+    display: block;
+    float: none; }
+  form .text,
+  form .textarea,
+  form .select,
+  form .email {
+    padding: 4px;
+    padding-right: 24px; }
+    form .text input, form .text select, form .text textarea,
+    form .textarea input,
+    form .textarea select,
+    form .textarea textarea,
+    form .select input,
+    form .select select,
+    form .select textarea,
+    form .email input,
+    form .email select,
+    form .email textarea {
+      display: block;
+      width: 100%;
+      padding: 4px 8px; }
+  form .required label {
+    color: #300000; }
+    form .required label:after {
+      content: " *";
+      color: red;
+      font-weight: bold; }
+  form .required input, form .required select, form .required textarea {
+    border-color: #300000; }
+  form .error {
+    background-color: #ffe5e5;
+    padding: 4px 5px; }
+    form .error .error-message {
+      color: red; }
+    form .error label {
+      color: red; }
+    form .error input, form .error select, form .error textarea {
+      border-color: red; }
+  form .input-note {
+    font-size: 90%;
+    font-style: italic; }
+
+/* END FORM CSS */
+dl {
+  display: block;
+  padding: 10px 15px; }
+  dl dd, dl dt {
+    line-height: 20px;
+    display: block;
+    padding: 4px 5px; }
+  dl dt {
+    font-weight: bold; }
+  dl dd {
+    padding: 10px 15px;
+    padding-top: 0; }
+
+.table-index-form {
+  width: 100%; }
+  .table-index-form td {
+    border: 1px solid #CCC; }
+
+.add-row-input {
+  overflow: hidden;
+  padding: 4px 5px; }
+  .add-row-input label, .add-row-input input, .add-row-input button {
+    float: left; }
+  .add-row-input input {
+    width: 40px;
+    padding: 4px 5px;
+    text-align: center; }
+
+tr.altrow, tr.altrow td {
+  background-color: #EEE; }
+
+p.table-message {
+  font-size: 2em;
+  display: block;
+  text-align: center;
+  margin: 20px;
+  font-style: italic; }
+
+.table-index {
+  width: 100%;
+  margin-bottom: 10px; }
+
+ul.top-menu {
+  display: block;
+  clear: both;
+  overflow: hidden; }
+  ul.top-menu li, ul.top-menu a {
+    display: inline-block; }
+  ul.top-menu a {
+    padding: 10px; }
+  ul.top-menu li.selected a {
+    font-weight: bold; }
+
+ul.actions, ul.actions li, ul.actions a {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  float: left; }
+ul.actions a {
+  display: block;
+  text-decoration: none;
+  padding: 5px;
+  margin: 4px;
+  border: 1px solid;
+  border-radius: 4px;
+  background-color: white; }
+  ul.actions a:hover {
+    background-color: #CCC;
+    color: white;
+    font-weight: normal; }
+ul.actions.actions-menu {
+  padding: 5px;
+  background-color: #eeeeee;
+  float: none;
+  overflow: hidden; }

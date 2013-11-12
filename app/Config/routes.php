@@ -45,7 +45,6 @@
 		'campaign', 
 		'legacy', 
 		'lookbook', 
-		'campaign', 
 		'media', 
 		'contact' => array('controller' => 'inquiries', 'action' => 'index')
 	);
@@ -56,6 +55,10 @@
 		if (!is_array($redirect)) {
 			$redirect = array('controller' => 'pages', 'action' => 'display', 'admin' => false, $redirect);
 		}
+		
+		Router::connect("/$find", $redirect);
+		Router::connect("/$find/", $redirect);
+		Router::connect("/$find.php", $redirect);
 		Router::connect("/$find.html", $redirect);
 	}
 	Router::connect('/contact/', array('controller' => 'inquiries', 'action' => 'index', 'admin' => false));

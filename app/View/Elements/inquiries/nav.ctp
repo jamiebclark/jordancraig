@@ -1,7 +1,7 @@
 <?php
 $baseUrl = array('action' => 'index', 'admin' => false);
 $navs = array(
-	array('Careers', array('controller' => 'jobs') + $baseUrl),
+	//array('Careers', array('controller' => 'jobs') + $baseUrl),
 	array('General Inquiries', array('controller' => 'inquiries', 'action' => 'add', 0) + $baseUrl),
 	array('Wholesale Inquiries', array('controller' => 'inquiries', 'action' => 'add', 1) + $baseUrl),
 );
