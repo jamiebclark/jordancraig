@@ -27,6 +27,7 @@ a:hover {color: #000000;font-weight:bold;}
 a.logo{width:100%; float:left; position:relative;}
 sup{font-size:70%; vertical-align:top; height: 0; line-height: 1;}
 
+/**Navigation**/
 ul.nav{float:right; }
 ul.nav a {
 	font: .67em/1.2 "Helvetica", Arial, sans-serif;
@@ -40,6 +41,7 @@ ul.nav li {display: inline-block; margin:0;}
 ul.nav li.last a {padding-right:0;}
 ul.nav li.first {padding-left:0;}
 ul.nav li.first a{text-align:right;}
+
 ul.social{float:right; width:50%; position:relative;}
 ul.social li{display:inline; float:right; }
 ul.social li.first a{padding-right:0;}
