@@ -1,3 +1,4 @@
+/* BEGIN FORM CSS */
 .contact-forms {
 	max-width: none;
 	float: right;
@@ -49,7 +50,7 @@ form {
 			}
 		}
 		input, select, textarea {
-			border-color: $requiredColor;
+			// border-color: $requiredColor;
 		}
 	}
 	.error {
@@ -70,3 +71,4 @@ form {
 		font-style: italic;
 	}
 }	
+/* END FORM CSS */

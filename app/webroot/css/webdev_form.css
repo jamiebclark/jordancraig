@@ -1,0 +1,64 @@
+/* BEGIN FORM CSS */
+.contact-forms {
+  max-width: none;
+  float: right;
+  margin: 0;
+  width: 55%; }
+
+form {
+  max-width: 760px;
+  float: none;
+  margin: 0 auto;
+  width: 100%; }
+  form fieldset {
+    display: block;
+    margin-bottom: 10px; }
+    form fieldset legend {
+      display: block;
+      background-color: black;
+      color: white;
+      line-height: 20px;
+      padding: 4px 5px;
+      width: 100%; }
+  form label {
+    display: block;
+    float: none; }
+  form .text,
+  form .textarea,
+  form .select,
+  form .email {
+    padding: 4px;
+    padding-right: 24px; }
+    form .text input, form .text select, form .text textarea,
+    form .textarea input,
+    form .textarea select,
+    form .textarea textarea,
+    form .select input,
+    form .select select,
+    form .select textarea,
+    form .email input,
+    form .email select,
+    form .email textarea {
+      display: block;
+      width: 100%;
+      padding: 4px 8px; }
+  form .required label {
+    color: #300000; }
+    form .required label:after {
+      content: " *";
+      color: red;
+      font-weight: bold; }
+  form .error {
+    background-color: #ffe5e5;
+    padding: 4px 5px; }
+    form .error .error-message {
+      color: red; }
+    form .error label {
+      color: red; }
+    form .error input, form .error select, form .error textarea {
+      border-color: red; }
+  form .input-note {
+    font-size: 90%;
+    font-style: italic; }
+
+/* END FORM CSS */
