@@ -3,9 +3,11 @@ echo $this->Html->image('contact.jpg', array('alt' => '2013 Fall Winter Campaign
 <div class="clear"></div>
 <h2>Contact</h2>
 
-<?php echo $this->element('inquiries/nav');
+<?php 
+echo $this->Form->create(null, array('class' => 'contact-forms'));
 
-echo $this->Form->create();
+echo $this->element('inquiries/nav');
+
 echo $this->Form->hidden('id');
 echo $this->Form->hidden('is_wholesale');
 
@@ -21,7 +23,7 @@ if ($isWholesale) {
 		'phone',
 		'message',
 		
-		'legend' => 'Wholesale Inquiries',
+		'fieldset' => false,
 	));
 } else {
 	echo $this->Form->inputs(array(
@@ -30,7 +32,7 @@ if ($isWholesale) {
 		'phone',
 		'message',
 		
-		'legend' => 'General Inquiry',
+		'fieldset' => false,
 	));		
 }
 
