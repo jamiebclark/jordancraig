@@ -1,3 +1,4 @@
+/* BEGIN FORM CSS */
 .contact-forms {
   max-width: none;
   float: right;
@@ -61,3 +62,5 @@ form {
   form .input-note {
     font-size: 90%;
     font-style: italic; }
+
+/* END FORM CSS */
