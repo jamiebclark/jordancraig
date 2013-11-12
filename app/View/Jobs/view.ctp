@@ -1,5 +1,6 @@
-
-
+<style type="text/css">
+ol,ul { list-style:disc; }
+</style>
 <h1 class="job"><?php echo $job['Job']['title'];?></h1>
 <h3 class="job">Location: <?php echo $job['JobLocation']['title']; ?></h3>
 <h3 class="job">Posted: <?php echo date('n/j/y', strtotime($job['Job']['created'])); ?></h3>

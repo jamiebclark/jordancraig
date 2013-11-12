@@ -37,7 +37,7 @@ font-size: .85em;
 .main p{
 	margin: 0.75em 24em  0.5em 4.25em;
 	}
-	.main p.apply{margin:20px 0;}
+.main p.apply{margin:20px 0;}
 .main p.apply a{background: none repeat scroll 0 0 #191919;
     border: medium none;
     color: #FFFFFF;
