@@ -50,29 +50,33 @@ else: ?>
 
 <?php 
 //Filter form
-echo $this->Form->create(null, array('class' => 'job-filter')); ?>
-	<fieldset>
-		<legend>Filter jobs</legend>
-		<?php
-		echo $this->Form->input('Filter.keyword', array(
-			'type' => 'text',
-			'label' => 'Keyword',
-		));
-		echo $this->Form->input('Job.job_category_id', array(
-			'type' => 'select',
-			'multiple' => true,
-			'options' => $jobCategories,
-			'size' => 4,
-		));
-		echo $this->Form->input('Job.job_location_id', array(
-			'type' => 'select',
-			'multiple' => true,
-			'options' => $jobLocations,
-			'size' => 4,
-		));
+if ($showFilter):
+	echo $this->Form->create(null, array('class' => 'job-filter')); ?>
+		<fieldset>
+			<legend>Filter jobs</legend>
+			<?php
+			echo $this->Form->input('Filter.keyword', array(
+				'type' => 'text',
+				'label' => 'Keyword',
+			));
+			echo $this->Form->input('Job.job_category_id', array(
+				'type' => 'select',
+				'multiple' => true,
+				'options' => $jobCategories,
+				'size' => 4,
+			));
+			echo $this->Form->input('Job.job_location_id', array(
+				'type' => 'select',
+				'multiple' => true,
+				'options' => $jobLocations,
+				'size' => 4,
+			));
 
-		echo $this->Form->button('Search', array('type' => 'submit'));
-		?>
-	</fieldset>
-<?php echo $this->Form->end(); ?>		
+			echo $this->Form->button('Search', array('type' => 'submit'));
+			?>
+		</fieldset>
+	<?php
+	echo $this->Form->end(); 
+endif;
+?>		
 	

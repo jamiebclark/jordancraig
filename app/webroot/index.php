@@ -27,6 +27,12 @@ if (!defined('DS')) {
 	define('DS', DIRECTORY_SEPARATOR);
 }
 
+
+## REPOSITORY SPECIFIC DECLARATIONS
+if (is_file(dirname(dirname(__FILE__)) . DS . 'Config' . DS . 'repository_define.php')) {
+	require_once(dirname(dirname(__FILE__)) . DS . 'Config' . DS . 'repository_define.php');
+}
+
 /**
  * These defines should only be edited if you have cake installed in
  * a directory layout other than the way it is distributed.

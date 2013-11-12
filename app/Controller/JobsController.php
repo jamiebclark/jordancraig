@@ -55,9 +55,16 @@ class JobsController extends AppController {
 		//Finds this page of jobs
 		$jobs = $this->paginate();
 		
+
+		//Decides if the filter should be displayed or not	
+		$showFilterCutoff = 5;
+		$showFilter = true;
+		if (!empty($this->params['paging']['Job'])) {
+			$showFilter = $this->params['paging']['Job']['count'] >= $showFilterCutoff;
+		}		
 		
 		//Sends variables to View
-		$this->set(compact('jobs', 'jobCategories', 'jobLocations', 'hasFilter'));
+		$this->set(compact('jobs', 'jobCategories', 'jobLocations', 'hasFilter', 'showFilter'));
 	}
 	
 	function view($id = null) {
