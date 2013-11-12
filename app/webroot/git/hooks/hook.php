@@ -12,6 +12,7 @@ $GitHook->logFile = 'log.txt';
  *		- Branch 2 => Branch 2 Location
  *	)
  **/
+ 
 $GitHook->fetch(array(
 	'jordancraig' => array(
 		'development' => '~/public_html/jordancraig_development/',
