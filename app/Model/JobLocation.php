@@ -1,4 +1,6 @@
 <?php
+App::uses('Location', 'Lib');
+
 class JobLocation extends AppModel {
 	var $name = 'JobLocation';
 	var $hasMany = array('Job');
@@ -20,10 +22,12 @@ class JobLocation extends AppModel {
 			$title .= $result['city'];
 		}
 		if (!empty($result['state'])) {
-			if (!empty($title)) {
-				$title .= ', ';
+			if (!empty($result['city'])) {
+				$title .= ', ' . $result['state'];
+			} else {
+				$Location = new Location();
+				$title .= $Location->states[$result['state']];
 			}
-			$title .= $result['state'];
 		}
 		return $this->save(compact('id', 'title'), array('callbacks' => false, 'validate' => false));
 	}
