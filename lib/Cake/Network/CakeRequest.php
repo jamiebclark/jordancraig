@@ -313,8 +313,6 @@ class CakeRequest implements ArrayAccess {
 			$base = implode('/', array_map('rawurlencode', explode('/', $base)));
 			$this->webroot = $base . '/';
 			
-			debug($base);
-
 			return $this->base = $base;
 		}
 
