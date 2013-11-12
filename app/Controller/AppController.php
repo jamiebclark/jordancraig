@@ -58,10 +58,6 @@ class AppController extends Controller {
 		'Layout.Table',
 	);
 	
-	public function beforeFilter() {
-		debug($this->request);
-	}
-	
 	public function beforeRender() {
 		//Admin-prefix specific rendering
 		if (!empty($this->request->params['prefix']) && $this->request->params['prefix'] == 'admin') {
