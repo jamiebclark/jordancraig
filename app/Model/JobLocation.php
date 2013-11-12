@@ -1,12 +1,12 @@
 <?php
+App::uses('Location', 'Lib');
+
 class JobLocation extends AppModel {
 	var $name = 'JobLocation';
 	var $hasMany = array('Job');
 	
 	var $actsAs = array(
-		'BlankDelete' => array(
-			'or' => array('city', 'state'),
-		)
+		//'BlankDelete' => array(	'and' => array('city', 'state'))
 	);
 	
 	public function afterSave($created, $options = array()) {
@@ -22,7 +22,12 @@ class JobLocation extends AppModel {
 			$title .= $result['city'];
 		}
 		if (!empty($result['state'])) {
-			$title .= ', ' . $result['state'];
+			if (!empty($result['city'])) {
+				$title .= ', ' . $result['state'];
+			} else {
+				$Location = new Location();
+				$title .= $Location->states[$result['state']];
+			}
 		}
 		return $this->save(compact('id', 'title'), array('callbacks' => false, 'validate' => false));
 	}

@@ -4,7 +4,7 @@ class JobLocationsController extends AppController {
 	var $components = array('IndexForm', 'Location');
 	
 	function admin_index() {
-		$this->IndexForm->processData(array('blankDelete' => array('city', 'state')));
+		$this->IndexForm->processData(array('blankDelete' => array('state')));
 		$this->Location->setFormElements();
 	}
 }
