@@ -4,9 +4,7 @@ class JobLocation extends AppModel {
 	var $hasMany = array('Job');
 	
 	var $actsAs = array(
-		'BlankDelete' => array(
-			'or' => array('city', 'state'),
-		)
+		//'BlankDelete' => array(	'and' => array('city', 'state'))
 	);
 	
 	public function afterSave($created, $options = array()) {
@@ -22,7 +20,10 @@ class JobLocation extends AppModel {
 			$title .= $result['city'];
 		}
 		if (!empty($result['state'])) {
-			$title .= ', ' . $result['state'];
+			if (!empty($title)) {
+				$title .= ', ';
+			}
+			$title .= $result['state'];
 		}
 		return $this->save(compact('id', 'title'), array('callbacks' => false, 'validate' => false));
 	}

@@ -4,7 +4,7 @@ class JordanCraigHelper extends AppHelper {
 	public $helpers = array('Html');
 
 	function beforeRender($options) {
-		$this->Html->css('webdev', null, array('inline' => false));
+		//$this->Html->css('webdev', null, array('inline' => false));
 		return parent::beforeRender($options);
 	}
 	

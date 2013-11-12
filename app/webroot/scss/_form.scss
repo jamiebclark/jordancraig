@@ -49,8 +49,8 @@ form {
 				font-weight: bold;
 			}
 		}
-		input, select, textarea {
-			border-color: $requiredColor;
+		input, select, textarea { 
+			// border-color: $requiredColor;
 		}
 	}
 	.error {

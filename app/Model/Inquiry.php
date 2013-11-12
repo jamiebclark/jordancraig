@@ -2,8 +2,8 @@
 class Inquiry extends AppModel {
 	public $name = 'Inquiry';
 	
-	public $wholesaleEmail = 'jamie@souperbowl.org';
-	public $generalEmail = 'webmaster@souperbowl.org';
+	public $wholesaleEmail 		= 'jamie@souperbowl.org';
+	public $generalEmail 		= 'webmaster@souperbowl.org';
 	
 	public $validate = array(
 		'name' => array(

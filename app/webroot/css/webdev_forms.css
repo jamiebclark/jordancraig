@@ -1,4 +1,3 @@
-/* BEGIN FORM CSS */
 .contact-forms {
   max-width: none;
   float: right;
@@ -48,6 +47,7 @@ form {
       content: " *";
       color: red;
       font-weight: bold; }
+
   form .error {
     background-color: #ffe5e5;
     padding: 4px 5px; }
@@ -60,5 +60,25 @@ form {
   form .input-note {
     font-size: 90%;
     font-style: italic; }
-
-/* END FORM CSS */
+	ul.actions, ul.actions li, ul.actions a {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  float: left; }
+ul.actions a {
+  display: block;
+  text-decoration: none;
+  padding: 5px;
+  margin: 4px;
+  border: 1px solid;
+  border-radius: 4px;
+  background-color: white; }
+  ul.actions a:hover {
+    background-color: #CCC;
+    color: white;
+    font-weight: normal; }
+ul.actions.actions-menu {
+  padding: 5px;
+  background-color: #eeeeee;
+  float: none;
+  overflow: hidden; }

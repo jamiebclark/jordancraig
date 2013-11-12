@@ -27,6 +27,7 @@ a:hover {color: #000000;font-weight:bold;}
 a.logo{width:100%; float:left; position:relative;}
 sup{font-size:70%; vertical-align:top; height: 0; line-height: 1;}
 
+/**Navigation**/
 ul.nav{float:right; }
 ul.nav a {
 	font: .67em/1.2 "Helvetica", Arial, sans-serif;
@@ -40,6 +41,7 @@ ul.nav li {display: inline-block; margin:0;}
 ul.nav li.last a {padding-right:0;}
 ul.nav li.first {padding-left:0;}
 ul.nav li.first a{text-align:right;}
+
 ul.social{float:right; width:50%; position:relative;}
 ul.social li{display:inline; float:right; }
 ul.social li.first a{padding-right:0;}
@@ -57,23 +59,7 @@ img.next, img.prev{cursor:pointer;}
 .footer {font-size: 11px; text-align: center; padding: 2em 0 2em;}
 .footer p {margin-bottom: 0.5em; color:#bbb;}
 
-/* Contact Form */
-form{font-size:0.85em; width:55%; font: normal 100% "Helvetica", Arial, sans-serif;}
-form span {text-align:justify; font-size:1em;}
-form label, form input{display:block; padding: 6px 0 2px; font-size:.85em;}
-input#email_input, textarea#message_input{width:90%; padding:0;}
-input[type="submit"] {
-    background: none repeat scroll 0 0 #191919;
-    border: medium none;
-    color: #FFFFFF;
-    cursor: pointer;
-    margin-top: 5px;
-	padding:2px;
-	font-size:11px;
-	left:0;
-	position:relative;
-}
-textarea#message_input{height:50px;}
+
 div.clear {clear: both;} 
 .caption-top, .caption-bottom {
     background: #000000;

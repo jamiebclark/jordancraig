@@ -102,8 +102,6 @@ form {
       content: " *";
       color: red;
       font-weight: bold; }
-  form .required input, form .required select, form .required textarea {
-    border-color: #300000; }
   form .error {
     background-color: #ffe5e5;
     padding: 4px 5px; }
@@ -150,7 +148,7 @@ tr.altrow, tr.altrow td {
   background-color: #EEE; }
 
 p.table-message {
-  font-size: 2em;
+  font-size: 18px;
   display: block;
   text-align: center;
   margin: 20px;
