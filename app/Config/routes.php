@@ -45,7 +45,6 @@
 		'campaign', 
 		'legacy', 
 		'lookbook', 
-		'campaign', 
 		'media', 
 		'contact' => array('controller' => 'inquiries', 'action' => 'index')
 	);

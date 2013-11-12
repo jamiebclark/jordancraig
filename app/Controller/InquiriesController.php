@@ -11,7 +11,7 @@ class InquiriesController extends AppController {
 		));	
 		$this->request->params['pass'][0] = $isWholesale;
 		$this->set(compact('isWholesale'));
-		$this->set('title_for_layout', $isWholesale ? 'Wholesale Inquiry' : 'General Inquiry');
+		$this->set('title_for_layout', $isWholesale ? 'Contact' : 'Contact');
 	}
 	
 	function success() {

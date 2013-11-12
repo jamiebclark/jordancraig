@@ -1,4 +1,5 @@
 <?php
+echo $this->Html->css(array('forms'));
 echo $this->Html->image('contact.jpg', array('alt' => '2013 Fall Winter Campaign')); ?>
 <div class="clear"></div>
 <h2>Contact</h2>

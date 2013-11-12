@@ -1,0 +1,42 @@
+/* Contact Form */
+.contact-forms{font-size:0.85em; width:480px; font-family: "Helvetica", Arial, sans-serif;}
+
+  ul.top-menu a {
+	padding: 0;
+	padding-right: 10px; 
+ }
+  ul.top-menu li.selected a {
+    font-weight: bold; }
+form .required label, 
+form label {
+	display: block;
+    font-size: 0.85em;
+    padding: 6px 0 2px;}
+form .required label:after {
+    content: " *";
+    color: red;
+    font-weight: bold;
+	}
+form .text input, form .text select, form .text textarea, form .textarea input, form .textarea select, form .textarea textarea, form .select input, form .select select, form .select textarea, form .email input, form .email select, form .email textarea {
+	width:90%;
+	padding:0;
+	}
+textarea#InquiryMessage{
+	height:100px;
+	}
+input[type="submit"] {
+    background: none repeat scroll 0 0 #191919;
+    border: medium none;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-top: 5px;
+	padding:2px;
+	font-size:11px;
+	left:0;
+	position:relative;
+}
+
+
+
+@ import "webdev_forms.css"
+

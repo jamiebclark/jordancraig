@@ -26,12 +26,9 @@ ul.nav a {
 .media li{width:200px; margin: 1em 1.2em;}
 	
 form{width:480px;}
-form span {
-	text-align:justify;
-	font-size:1em;
-}
-input#email_input, textarea#message_input{width:480px; padding:0;}
-textarea#message_input{height:100px;}
+
+input#InquiryStoreName, input#InquiryStoreAddress,input#InquiryWebsite,input#InquiryName,input#InquiryEmail, textarea#InquiryMessage{width:480px; padding:0;}
+textarea#InquiryMessage{height:100px;}
 input[type="submit"]{float:right; border:none; background:#191919; color:#ffffff; margin-top:5px;cursor:pointer;}
 
 
