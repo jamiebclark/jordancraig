@@ -113,6 +113,7 @@ $pageNav = array(
 		
 		<div class="footer">
 			<p>&#169; Brian Brothers Inc. 2013. All Rights Reserved.</p>
+			<p><?php echo $this->Html->link('Careers', array('controller' => 'jobs', 'action' => 'index', 'admin' => false)); ?></p>
 			<?php echo $this->element('login'); ?>
 			
 		</div><!-- /end .footer -->
