@@ -2,7 +2,7 @@
 class JobApplicationHelper extends AppHelper {
 	public $name = 'JobApplication';
 	
-	private $uploadDir = '/resumes/';
+	private $uploadDir = '/files/resumes/';
 	
 	public function name($result) {
 		$fields = array('first_name', 'middle_name', 'last_name');

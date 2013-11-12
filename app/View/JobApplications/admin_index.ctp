@@ -13,7 +13,7 @@ foreach ($jobApplications as $jobApplication):
 	
 	$this->Table->cells(array(
 		array(
-			$this->Html->link($this->JobApplication->name($jobApplication['JobApplicant']), $url),
+			$this->Html->link($this->JobApplication->name($jobApplication['JobApplicant']), array('action' => 'view', $id)),
 			'Name', 'JobApplicant.last_name',
 		), array(
 			$this->Html->link($jobApplication['Job']['title'], $jobUrl, array('class' => 'secondary')),
