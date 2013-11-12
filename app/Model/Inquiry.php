@@ -2,8 +2,8 @@
 class Inquiry extends AppModel {
 	public $name = 'Inquiry';
 	
-	public $wholesaleEmail 		= 'dmnaupari@gmail.com';		//chang.b29@gmail.com
-	public $generalEmail 		= 'webmaster@souperbowl.org';	//chang.b29@gmail.com
+	public $wholesaleEmail 		= 'chang.b29@gmail.com';
+	public $generalEmail 		= 'chang.b29@gmail.com';
 	
 	public $validate = array(
 		'name' => array(
@@ -57,7 +57,7 @@ class Inquiry extends AppModel {
 			if (!$useCakeEmail) {
 				$eol = "\r\n";
 				$headers = '';
-				$headers .= 'To: ' . $toEmail . $eol;
+				//$headers .= 'To: ' . $toEmail . $eol;
 				$headers .= 'From: ' . $fromEmail . $eol;
 				$headers .= 'Reply-To: ' . $fromEmail . $eol;
 				$headers .= 'X-Mailer: PHP/' . phpversion();

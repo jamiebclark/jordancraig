@@ -62,7 +62,9 @@
 		Router::connect("/$find.html", $redirect);
 	}
 	Router::connect('/contact/', array('controller' => 'inquiries', 'action' => 'index', 'admin' => false));
-
+	
+	//Password Login
+	Router::connect('/login/*', array('controller' => 'job_applications', 'action' => 'index', 'admin' => true));
 /**
  * Load the CakePHP default routes. Only remove this if you do not want to use
  * the built-in default routes.
