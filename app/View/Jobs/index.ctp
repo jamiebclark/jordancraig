@@ -4,7 +4,8 @@ form.job-filter {
 	float: none;
 }
 </style>
-<h1>Job Listings</h1>
+<h2>Job Listings</h2>
+<p>Here are our current job openings. Please click on the job title for more information, and apply from that page if you are interested.</p>
 <?php 
 //Display if no jobs are found:
 if (empty($jobs)): ?>
