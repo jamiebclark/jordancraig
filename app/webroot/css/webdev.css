@@ -102,8 +102,6 @@ form {
       content: " *";
       color: red;
       font-weight: bold; }
-  form .required input, form .required select, form .required textarea {
-    border-color: #300000; }
   form .error {
     background-color: #ffe5e5;
     padding: 4px 5px; }
