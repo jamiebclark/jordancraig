@@ -13,17 +13,23 @@ class JobsController extends AppController {
 	}
 	
 	function index() {
-		//Finds Job Categories
+		//Settings
+		$showFilter = true;			//Should the job filter be displayed
+		$showFilterCutoff = 5;		//Only shows job filter if a certain amount of jobs are returned
+		
+		//Looks for data passed into the page
+		$data = !empty($this->request->data) ? $this->request->data : array();
+
+		//Finds select options for the filter form
 		$jobCategories = $this->Job->JobCategory->find('list');
 		$jobCategories = array('' => '(All Categories)') + $jobCategories;	//Adds blank category
-
 		$jobLocations = $this->Job->JobLocation->find('list');
 		$jobLocations = array('' => '(All Locations)') + $jobLocations;
 		
 		$criteria = array();
-		$conditions = array('Job.active' => 1);
-		if (!empty($this->request->data['Filter']['keyword'])) {
-			$keyword = trim($this->request->data['Filter']['keyword']);
+		$conditions = array('Job.active' => 1);		//Only finds active jobs
+		if (!empty($data['Filter']['keyword'])) {
+			$keyword = trim($data['Filter']['keyword']);
 			$conditions['Job.title LIKE'] = '%' . $keyword . '%';
 			$criteria[] = "Contains \"$keyword\"";
 		}
@@ -35,8 +41,8 @@ class JobsController extends AppController {
 		);
 		foreach ($fields as $fieldLabel => $fieldVars) {	
 			list($field, $fieldResult) = $fieldVars;
-			if (!empty($this->request->data['Job'][$field])) {
-				foreach ($this->request->data['Job'][$field] as $fieldId) {
+			if (!empty($data['Job'][$field])) {
+				foreach ($data['Job'][$field] as $fieldId) {
 					if ($fieldId == '') {	//User has select "All Categories"
 						unset($conditions["Job.$field"]);
 						break;
@@ -50,20 +56,14 @@ class JobsController extends AppController {
 		}
 		$hasFilter = !empty($criteria);	//Passes to View if the user is filtering the search
 
-		//Only grabs active jobs
 		$this->paginate = compact('conditions');
-		//Finds this page of jobs
-		$jobs = $this->paginate();
+		$jobs = $this->paginate();	//Finds this page of jobs
 		
-
-		//Decides if the filter should be displayed or not	
-		$showFilterCutoff = 5;
-		$showFilter = true;
-		if (!empty($this->params['paging']['Job'])) {
+		if ($showFilter && !empty($this->params['paging']['Job'])) {
 			$showFilter = $this->params['paging']['Job']['count'] >= $showFilterCutoff;
 		}		
 		
-		//Sends variables to View
+		//Sets variables to be sent to View
 		$this->set(compact('jobs', 'jobCategories', 'jobLocations', 'hasFilter', 'showFilter'));
 	}
 	
