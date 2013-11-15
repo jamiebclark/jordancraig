@@ -1,0 +1,17 @@
+
+.caption-top, .caption-bottom {
+    background: #000000;
+    color: #ffffff;
+    cursor:default;
+    padding:5px 0 ;
+    font-size:11px;
+    text-align:center;
+}
+.caption-bottom {
+    border-width:0px;
+}
+.caption-wrapper{float:left;}
+.caption-bottom  span{
+display:inline-block;
+padding:0 15px;
+}
