@@ -60,7 +60,6 @@ $pageNav = array(
 	<![endif]-->
 	
 	<?php 
-	echo $this->Html->css('slide960', null)."\n";
 	echo $this->Html->css('max320', array('id' => 'size-stylesheet'))."\n";?>
 	
 <?php
