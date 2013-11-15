@@ -51,7 +51,7 @@ ul.nav a {
 	
 form{width:480px;}
 
-input#InquiryStoreName, input#InquiryStoreAddress,input#InquiryWebsite,input#InquiryName,input#InquiryEmail, textarea#InquiryMessage{width:480px;}
+/*input#InquiryStoreName, input#InquiryStoreAddress,input#InquiryWebsite,input#InquiryName,input#InquiryEmail, textarea#InquiryMessage{width:480px;}*/
 textarea#InquiryMessage{height:100px;}
 input[type="submit"]{float:right; border:none; background:#191919; color:#ffffff; margin-top:5px;cursor:pointer;}
 

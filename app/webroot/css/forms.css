@@ -32,7 +32,7 @@ form .email textarea
 form .tel input,
 form .tel select,
 form .tel textarea {
-	width:90%;
+	/*width:90%;*/
 	padding: 2px  8px;
 	}
 	

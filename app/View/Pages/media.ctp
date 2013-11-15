@@ -1,4 +1,6 @@
-<?php echo $this->Html->image("media.jpg");?>
+<?php echo $this->Html->image('media.jpg', array(
+	'alt' => '2013 Fall Winter Campaign'));
+?>
 <div class="clear"></div>
 <h2>Media</h2>
 <ul class="media">
