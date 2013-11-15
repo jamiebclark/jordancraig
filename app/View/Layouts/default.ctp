@@ -66,8 +66,9 @@ $pageNav = array(
 	echo $this->fetch('css');
 	echo $this->fetch('script');?>
 </head>
-<div id="page">
+
 <body>
+<div id="page">
 	<div class="inner">
 		<div class="mast">
 <?php 

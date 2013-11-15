@@ -1,6 +1,7 @@
 <?php 
 	$this->Html->css('grid960', null, array('inline' => false))."\n";
 	$this->Html->css('flexslider', null, array('inline' => false))."\n";
+	$this->Html->css('webdev', null, array('inline' => false))."\n";
 ?>
 <div class="slidernav"></div>
 	<section class="slider">
