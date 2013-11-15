@@ -59,13 +59,14 @@ $pageNav = array(
 	<?php echo $this->Html->css('ie')."\n";?>
 	<![endif]-->
 	<?php echo $this->Html->css('max320', array('id' => 'size-stylesheet'))."\n";?>
-	<script type="text/javascript">$(function () {$("#nav").tinyNav();});</script>
+	
 <?php
 	//echo $this->Html->css('cake.generic');
 	//echo $this->fetch('meta');
 	echo $this->fetch('css');
 	echo $this->fetch('script');?>
-</head>
+<script type="text/javascript">$(function () {$("#nav").tinyNav();});</script>
+	</head>
 
 <body>
 <div id="page">
