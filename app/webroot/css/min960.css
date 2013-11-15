@@ -22,7 +22,7 @@ ul.nav a {
 	}
 .main h1.job{
 	font-size: 1.5em;
-	margin-top:4em;}
+	margin-top:2em;}
 
 .main h2.job{
 	font-size: 1em;
@@ -30,7 +30,7 @@ ul.nav a {
 	margin-left:0;
 	}
 .main h3.job{
-font-size: .85em;
+	font-size: .85em;
 	margin: 0 15em  0 3em;
 	margin-left:0;
 	}
@@ -51,7 +51,7 @@ font-size: .85em;
 	
 form{width:480px;}
 
-input#InquiryStoreName, input#InquiryStoreAddress,input#InquiryWebsite,input#InquiryName,input#InquiryEmail, textarea#InquiryMessage{width:480px; padding:0;}
+input#InquiryStoreName, input#InquiryStoreAddress,input#InquiryWebsite,input#InquiryName,input#InquiryEmail, textarea#InquiryMessage{width:480px;}
 textarea#InquiryMessage{height:100px;}
 input[type="submit"]{float:right; border:none; background:#191919; color:#ffffff; margin-top:5px;cursor:pointer;}
 

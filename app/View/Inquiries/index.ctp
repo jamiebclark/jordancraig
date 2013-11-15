@@ -22,8 +22,3 @@ echo $this->Form->end('SUBMIT');
 	601 16<sup>th</sup> st.<br/>
 	Carlstadt, NJ 07072<br/><br/>
 </p>
-<p>				
-	<strong>EMPLOYMENT  OPPORTUNITIES</strong><br/><br/>
-	<strong>Design:</strong> Brian@jordancraig.net<br/>
-	<strong>Sales:</strong> Sales@jordancraig.net
-</p>

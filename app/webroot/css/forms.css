@@ -1,6 +1,6 @@
 /* Contact Form */
 .contact-forms{font-size:0.85em; width:480px; font-family: "Helvetica", Arial, sans-serif;}
-
+ul.top-menu {margin-left:0;}
   ul.top-menu a {
 	padding: 0;
 	padding-right: 10px; 
@@ -17,10 +17,33 @@ form .required label:after {
     color: red;
     font-weight: bold;
 	}
-form .text input, form .text select, form .text textarea, form .textarea input, form .textarea select, form .textarea textarea, form .select input, form .select select, form .select textarea, form .email input, form .email select, form .email textarea {
+form .text input,
+form .text select,
+form .text textarea,
+form .textarea input,
+form .textarea select,
+form .textarea textarea,
+form .select input,
+form .select select,
+form .select textarea,
+form .email input,
+form .email select,
+form .email textarea
+form .tel input,
+form .tel select,
+form .tel textarea {
 	width:90%;
-	padding:0;
+	padding: 2px  8px;
 	}
+	
+form .text,
+form .textarea,
+form .select,
+form .email,
+form .tel  {
+    padding: 4px;
+    padding-right: 24px; }
+
 textarea#InquiryMessage{
 	height:100px;
 	}
