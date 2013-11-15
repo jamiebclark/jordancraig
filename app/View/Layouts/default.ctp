@@ -58,7 +58,9 @@ $pageNav = array(
 	<!--[if IE 7]>
 	<?php echo $this->Html->css('ie')."\n";?>
 	<![endif]-->
-	<?php echo $this->Html->css('max320', array('id' => 'size-stylesheet'))."\n";?>
+	
+	<?php 
+	echo $this->Html->css('max320', array('id' => 'size-stylesheet'))."\n";?>
 	
 <?php
 	//echo $this->Html->css('cake.generic');

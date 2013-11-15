@@ -1,7 +1,7 @@
 <?php 
 	$this->Html->css('slide960', null, array('inline' => false))."\n";
-	$this->Html->script('jquery.jcarousel.min', array('inline' => false));
-	$this->Html->script('script', array('inline' => false));
+	$this->Html->script('jquery.jcarousel.min', array('inline' => false))."\n";
+	$this->Html->script('script', array('inline' => false))."\n";
 ?>
 <div id="list" class="clear">
 	<ul id="slider" class="jcarousel-skin-tango">
