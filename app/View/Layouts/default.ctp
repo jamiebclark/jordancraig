@@ -66,7 +66,11 @@ $pageNav = array(
 	//echo $this->Html->css('cake.generic');
 	//echo $this->fetch('meta');
 	echo $this->fetch('css');
-	echo $this->fetch('script');?>
+	echo $this->fetch('script');
+	echo $this->fetch('block');
+	
+	$this->set('script', '');	//Clears the script value
+	?>
 <script type="text/javascript">$(function () {$("#nav").tinyNav();});</script>
 	</head>
 
@@ -135,5 +139,9 @@ $pageNav = array(
 		pageTracker._trackPageview();
 	} catch(err) {}
 </script>
+<?php 
+	//Outputs any additional script that's been set during the View
+	echo $this->fetch('script'); 
+?>
 </body>
 </html>
