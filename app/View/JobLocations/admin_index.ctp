@@ -1,5 +1,8 @@
+<h1>Jobs Locations</h1>
+<ul class="actions actions-menu">
+	<li><?php echo $this->Html->link('Add a new location', array('action' => 'add')); ?></li>
+</ul>
 <?php
-echo $this->Layout->defaultHeader();
 foreach ($jobLocations as $jobLocation):
 	$url = array('action' => 'edit', $jobLocation['JobLocation']['id']);
 	$actions = '<ul class="actions">

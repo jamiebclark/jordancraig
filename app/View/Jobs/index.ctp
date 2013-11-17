@@ -65,12 +65,14 @@ if ($showFilter):
 				'multiple' => true,
 				'options' => $jobCategories,
 				'size' => 4,
+				'label' => 'Category',
 			));
 			echo $this->Form->input('Job.job_location_id', array(
 				'type' => 'select',
 				'multiple' => true,
 				'options' => $jobLocations,
 				'size' => 4,
+				'label' => 'Location',
 			));
 
 			echo $this->Form->button('Search', array('type' => 'submit'));

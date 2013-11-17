@@ -26,7 +26,12 @@ class JobLocationsController extends AppController {
 	}
 	
 	function admin_add() {
-		$this->FormData->addData();	
+		$default = array(
+			'JobLocation' => array(
+				'country' => 'US',
+			)
+		);
+		$this->FormData->addData(compact('default'));	
 	}
 	
 	function admin_delete($id = null) {
@@ -34,7 +39,10 @@ class JobLocationsController extends AppController {
 	}
 	
 	function _setFormElements() {
-		$states = $this->JobLocation->State->find('list');
+		$states = $this->JobLocation->State->selectList(array(
+			'optGroup' => 'Country.title',
+			'blank' => false,
+		));
 		$countries = $this->JobLocation->Country->find('list');
 		$this->set(compact('states', 'countries'));
 	}

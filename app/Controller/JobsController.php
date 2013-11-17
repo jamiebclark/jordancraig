@@ -23,7 +23,7 @@ class JobsController extends AppController {
 		//Finds select options for the filter form
 		$jobCategories = $this->Job->JobCategory->find('list');
 		$jobCategories = array('' => '(All Categories)') + $jobCategories;	//Adds blank category
-		$jobLocations = $this->Job->JobLocation->find('list');
+		$jobLocations = $this->Job->JobLocation->find('list', array('fields' => array('id', 'title_long')));
 		$jobLocations = array('' => '(All Locations)') + $jobLocations;
 		
 		$criteria = array();
