@@ -15,7 +15,7 @@ class JobsController extends AppController {
 	function index() {
 		//Settings
 		$showFilter = true;			//Should the job filter be displayed
-		$showFilterCutoff = 5;		//Only shows job filter if a certain amount of jobs are returned
+		$showFilterCutoff = 1;		//Only shows job filter if a certain amount of jobs are returned
 		
 		//Looks for data passed into the page
 		$data = !empty($this->request->data) ? $this->request->data : array();
@@ -62,7 +62,7 @@ class JobsController extends AppController {
 		if ($showFilter && !empty($this->params['paging']['Job'])) {
 			$showFilter = $this->params['paging']['Job']['count'] >= $showFilterCutoff;
 		}		
-		
+		//debug(compact('showFilter')
 		//Sets variables to be sent to View
 		$this->set(compact('jobs', 'jobCategories', 'jobLocations', 'hasFilter', 'showFilter'));
 	}

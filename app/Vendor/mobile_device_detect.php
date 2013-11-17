@@ -106,12 +106,16 @@ function mobile_device_detect($iphone=true,$android=true,$opera=true,$blackberry
   } // ends the switch 
 
   // tell adaptation services (transcoders and proxies) to not alter the content based on user agent as it's already being managed by this script
-  header('Cache-Control: no-transform'); // http://mobiforge.com/developing/story/setting-http-headers-advise-transcoding-proxies
-  header('Vary: User-Agent, Accept'); // http://mobiforge.com/developing/story/setting-http-headers-advise-transcoding-proxies
+  if (!headers_sent()) {
+	  header('Cache-Control: no-transform'); // http://mobiforge.com/developing/story/setting-http-headers-advise-transcoding-proxies
+	  header('Vary: User-Agent, Accept'); // http://mobiforge.com/developing/story/setting-http-headers-advise-transcoding-proxies
+  }
 
   // if redirect (either the value of the mobile or desktop redirect depending on the value of $mobile_browser) is true redirect else we return the status of $mobile_browser
   if($redirect = ($mobile_browser==true) ? $mobileredirect : $desktopredirect){
-    header('Location: '.$redirect); // redirect to the right url for this device
+	if (!headers_sent()) {
+		header('Location: '.$redirect); // redirect to the right url for this device
+	}
     exit;
   }else{ 
     return $mobile_browser; // will return either true or false 

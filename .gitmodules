@@ -7,3 +7,6 @@
 [submodule "app/Plugin/Layout"]
 	path = app/Plugin/Layout
 	url = https://github.com/jamiebclark/Layout.git
+[submodule "app/Plugin/Location"]
+	path = app/Plugin/Location
+	url = https://github.com/jamiebclark/Location.git
