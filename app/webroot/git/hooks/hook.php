@@ -16,7 +16,7 @@ $GitHook->logFile = 'log.txt';
 $GitHook->fetch(array(
 	'jordancraig' => array(
 		'development' => '~/public_html/jordancraig_development/',
-		'production' => '~/public_html/jordancraig_web/',
+		'production' => '~/public_html/jordancraig/',
 	)
 ));
 
