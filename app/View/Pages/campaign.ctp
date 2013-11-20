@@ -21,7 +21,7 @@
     $(window).load(function(){
 		$('.flexslider').flexslider({
 			start: function(slider){
-				$('body').removeClass('loading');
+				//$('body').removeClass('loading');
 					$('.flex-direction-nav li').eq(0).css({
 						right : '50px',
 						top : '-26px'
