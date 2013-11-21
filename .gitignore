@@ -1,4 +1,5 @@
 /app/webroot/.sass-cache/
+/app/webroot/error_log
 
 /app/webroot/files/resumes/*
 !/app/webroot/files/resumes/
