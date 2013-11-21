@@ -19,6 +19,8 @@ foreach ($jobApplications as $jobApplication):
 			$this->Html->link($jobApplication['Job']['title'], $jobUrl, array('class' => 'secondary')),
 			'Job', 'Job.title'
 		),
+		array($jobApplication['Job']['JobLocation']['title'], 'Location'),
+		array($jobApplication['Job']['JobCategory']['title'], 'Category'),
 		array($this->Time->niceShort($jobApplication['JobApplication']['created']), 'Date', 'created'), 
 		array($this->JobApplication->downloadLink($jobApplication['JobApplication']), 'Resume'), 
 		array($actions, 'Actions')

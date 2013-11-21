@@ -23,6 +23,13 @@ class JobApplicationsController extends AppController {
 	}
 	
 	public function admin_index() {
+		$this->paginate = array(
+			'contain' => array(
+				'Job' => array('JobLocation', 'JobCategory'),
+				'JobApplicant',
+			)
+		);
+		
 		$jobApplications = $this->paginate();
 		$this->set(compact('jobApplications'));
 	}
@@ -40,7 +47,7 @@ class JobApplicationsController extends AppController {
 	}
 	
 	public function _setFindModelOptions($options) {
-		$options['contain'] = array('Job', 'JobApplicant');
+		$options['contain'] = array('Job' => array('JobLocation', 'JobCategory'), 'JobApplicant');
 		return $options;
 	}
 	
