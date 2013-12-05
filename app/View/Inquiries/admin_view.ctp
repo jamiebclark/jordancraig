@@ -12,6 +12,8 @@ if ($inquiry['is_wholesale']) {
 } else {
 	$info += array(
 		'Name' => $inquiry['name'],
+		'Address' => $inquiry['address'],
+		'Zip Code' => $inquiry['zip'],
 	);
 }
 $info += array(

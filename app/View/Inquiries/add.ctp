@@ -27,16 +27,20 @@ if ($isWholesale) {
 		'fieldset' => false,
 	));
 } else {
+	?>
+	<p>Please fill out information below and someone will get back to you shortly with retailers that sell our merchandise near your area</p>
+	<?php
 	echo $this->Form->inputs(array(
 		'name',
 		'email' => array('label' => 'E-mail'),
+		'address',
+		'zip' => array('label' => 'Zip Code'),
 		'phone',
 		'message',
 		
 		'fieldset' => false,
 	));		
 }
-
 echo $this->Form->end('Send');
 ?>
 

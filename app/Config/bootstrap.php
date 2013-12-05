@@ -108,3 +108,13 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+
+/**
+ * Page Constants
+ **/
+
+//Emails
+define('WHOLESALE_EMAIL', 'alexandra@brianbrothers.com');
+//define('GENERAL_EMAIL', 'brianjr.brianbros@gmail.com');
+define('STORE_LOCATOR_EMAIL', 'alexandra@brianbrothers.com');
+

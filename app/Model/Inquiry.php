@@ -1,9 +1,7 @@
 <?php
 class Inquiry extends AppModel {
 	public $name = 'Inquiry';
-	
-	public $wholesaleEmail 		= 'alexandra@brianbrothers.com';
-	public $generalEmail 		= 'brianjr.brianbros@gmail.com';
+	public $order = array('Inquiry.created' => 'DESC');
 	
 	public $validate = array(
 		'name' => array(
@@ -18,6 +16,14 @@ class Inquiry extends AppModel {
 			'rule' => 'notEmpty',
 			'message' => 'Please enter a message',
 		),
+		'address' => array(
+			'rule' => 'notEmpty',
+			'message' => 'Please enter your address',
+		),
+		'zip' => array(
+			'rule' => 'notEmpty',
+			'message' => 'Please enter your zip code',
+		),
 		'store_name' => array(
 			'rule' => 'notEmpty',
 			'message' => 'Please enter your store name',
@@ -28,11 +34,16 @@ class Inquiry extends AppModel {
 		)
 	);
 	
+	
 	public function afterSave($created, $options = array()) {
 		$this->sendEmail($this->id);
 		return parent::afterSave($created, $options);
 	}
 	
+	/**
+	 * After an Inquiry has been successfully saved, send an email to staff letting them know it has been added
+	 *
+	 **/
 	public function sendEmail($id = null) {
 		//Finds the inquiry and makes sure it hasn't been sent already
 		$result = $this->find('first', array(
@@ -45,7 +56,8 @@ class Inquiry extends AppModel {
 		if (!empty($result)) {
 			$result = $result[$this->alias];
 			//Finds which email to send to
-			$toEmail = $result['is_wholesale'] ? $this->wholesaleEmail : $this->generalEmail;
+			//Emails defined in Config/bootstrap.php
+			$toEmail = $result['is_wholesale'] ? WHOLESALE_EMAIL : STORE_LOCATOR_EMAIL;
 			
 			$subject = 'An inquiry has been made from the website';
 			$fromEmail = $result['email'];
@@ -95,20 +107,38 @@ class Inquiry extends AppModel {
 		if ($isWholesale) {
 			$message .= 'WHOLESALE INQUIRY' . $eol;
 		} else {
-			$message .= 'GENERAL INQUIRY' . $eol;
+			$message .= 'STORE LOCATOR INQUIRY' . $eol;
 		}
 		$message .= $lineSeparator;
-		$message .= 'Created: ' . date('F j, Y H:iA', strtotime($result['created'])) . $eol;
+
+		$fieldsDisplay = array('Created' => 'created');//date('F j, Y H:iA', strtotime($result['created']));
 		if ($isWholesale) {
-			$message .= "Store Name: {$result['store_name']}$eol";
-			$message .= "Store Address: {$result['store_address']}$eol";
-			$message .= "Web Address: {$result['website']}$eol";
-			$message .= "Contact Name: {$result['name']}$eol";
+			$fieldsDisplay += array(
+				'Store Name' => 'store_name',
+				'Store Address' => 'store_address',
+				'Web Address' => 'website',
+				'Contact Name' => 'name',
+			);
 		} else {
-			$message .= "Name: {$result['name']}$eol";
+			$fieldsDisplay += array(
+				'Name' => 'name',
+				'Address' => 'address',
+				'Zip Code' => 'zip',
+			);
 		}
-		$message .= "Email: {$result['email']}$eol";
-		$message .= "Phone: {$result['phone']}$eol";
+		$fieldsDisplay += array(
+			'Email' => 'email',
+			'Phone' => 'phone',
+		);
+		
+		foreach ($fieldsDisplay as $label => $field) {
+			$val = $result[$field];
+			if ($field == 'created' || $field == 'modified') {
+				$val = date('F j, Y H:iA', strtotime($val));
+			}
+			$message .= "$label: $val$eol";
+		}
+
 		$message .= $eol . "Message Text:" . $eol;
 		$message .= $lineSeparator;
 		$message .= $result['message'] . $eol;

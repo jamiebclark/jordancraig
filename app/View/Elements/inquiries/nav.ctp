@@ -2,8 +2,9 @@
 $baseUrl = array('action' => 'index', 'admin' => false);
 $navs = array(
 	//array('Careers', array('controller' => 'jobs') + $baseUrl),
-	array('GENERAL INQUIRIES', array('controller' => 'inquiries', 'action' => 'add', 0) + $baseUrl),
+	//array('GENERAL INQUIRIES', array('controller' => 'inquiries', 'action' => 'add', 0) + $baseUrl),
 	array('WHOLESALE INQUIRIES', array('controller' => 'inquiries', 'action' => 'add', 1) + $baseUrl),
+	array('STORE LOCATOR', array('controller' => 'inquiries', 'action' => 'add', 0) + $baseUrl),
 );
 $params = $this->request->params;
 ?>
