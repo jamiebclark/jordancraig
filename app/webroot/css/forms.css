@@ -1,11 +1,12 @@
 /* Contact Form */
 .contact-forms{font-size:0.85em; min-width:320px; font-family: "Helvetica", Arial, sans-serif;}
 ul.top-menu {margin-left:0;}
-  ul.top-menu a {
+ul.top-menu a {
 	padding: 0;
 	padding-right: 10px; 
  }
-  ul.top-menu li.selected a {
+ul.top-menu li {margin-right:5px;}
+ul.top-menu li.selected a {
     font-weight: bold;
     background-color: #000000;
     color: #FFFFFF;
