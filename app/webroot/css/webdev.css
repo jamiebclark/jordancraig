@@ -134,8 +134,9 @@ dl {
 .table-index-form td {
     border: 1px solid #CCC; }
 .table-nav, .table-nav-top,.paginateControl{font-size:12px;}
-.paginateNav{margin:10px 0 0 0}
-.paginateControl span{margin-right:5px;}
+.paginateNav{margin:10px 0 0 0;}
+.paginateControl span{margin:5px; padding:0 2px;}
+.paginateControl span.current{background-color: #000; color:#fff;}
 .paginateCounter{margin-top:5px;}
 .add-row-input {
   overflow: hidden;
