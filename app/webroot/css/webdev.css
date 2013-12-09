@@ -131,15 +131,18 @@ dl {
 
 .table-index-form {
   width: 100%; }
-  .table-index-form td {
+.table-index-form td {
     border: 1px solid #CCC; }
-
+.table-nav, .table-nav-top,.paginateControl{font-size:12px;}
+.paginateNav{margin:10px 0 0 0}
+.paginateControl span{margin-right:5px;}
+.paginateCounter{margin-top:5px;}
 .add-row-input {
   overflow: hidden;
   padding: 4px 5px; }
-  .add-row-input label, .add-row-input input, .add-row-input button {
+ .add-row-input label, .add-row-input input, .add-row-input button {
     float: left; }
-  .add-row-input input {
+ .add-row-input input {
     width: 40px;
     padding: 4px 5px;
     text-align: center; }
@@ -157,7 +160,7 @@ p.table-message {
 .table-index {
   width: 100%;
   margin-bottom: 10px; }
-
+/*Admin Pages*/  
 ul.top-menu {
   display: block;
   clear: both;
@@ -168,7 +171,6 @@ ul.top-menu {
     padding: 10px; }
   ul.top-menu li.selected a {
     font-weight: bold; }
-
 ul.actions, ul.actions li, ul.actions a {
   margin: 0;
   padding: 0;
@@ -192,8 +194,7 @@ ul.actions.actions-menu {
   float: none;
   overflow: hidden; }
 
-/*Admin Pages*/  
-pre {
+pre{
 font-size:14px;
 overflow: auto;
 padding:8px;
@@ -205,3 +206,5 @@ white-space: -pre-wrap; /* Opera 4-6 */
 white-space: -o-pre-wrap; /* Opera 7 */
 word-wrap: break-word; /* Internet Explorer 5.5+ */ 
 }
+
+
