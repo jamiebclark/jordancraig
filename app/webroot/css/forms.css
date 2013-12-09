@@ -6,7 +6,11 @@ ul.top-menu {margin-left:0;}
 	padding-right: 10px; 
  }
   ul.top-menu li.selected a {
-    font-weight: bold; }
+    font-weight: bold;
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 2px 10px;
+	}
 form .required label, 
 form label {
 	display: block;

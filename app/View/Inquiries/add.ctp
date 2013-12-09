@@ -28,7 +28,7 @@ if ($isWholesale) {
 	));
 } else {
 	?>
-	<p>Please fill out information below and someone will get back to you shortly with retailers that sell our merchandise near your area</p>
+	<p class="locator">Please fill out information below and someone will get back to you shortly with retailers that sell our merchandise near your area</p>
 	<?php
 	echo $this->Form->inputs(array(
 		'name',
