@@ -1,6 +1,6 @@
 <?php 
 	echo $this->Html->image('about.jpg', array(
-	'alt' => '2013 Fall Winter Campaign'));
+	'alt' => '2014 Spring Summer Campaign'));
 ?>
 
 <div class="clear"></div>

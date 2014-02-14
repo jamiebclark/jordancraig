@@ -11,6 +11,8 @@
 				<li><?php echo $this->Html->image("campaign/c_2.jpg");?></li>
 				<li><?php echo $this->Html->image("campaign/c_3.jpg");?></li>
 				<li><?php echo $this->Html->image("campaign/c_4.jpg");?></li>
+				<li><?php echo $this->Html->image("campaign/c_5.jpg");?></li>
+				<li><?php echo $this->Html->image("campaign/c_6.jpg");?></li>
 			</ul>
 		</div>
 	</section>
@@ -23,11 +25,11 @@
 			start: function(slider){
 				//$('body').removeClass('loading');
 					$('.flex-direction-nav li').eq(0).css({
-						right : '50px',
+						right : '80px',
 						top : '-26px'
 					});
 		$('.flex-direction-nav li').eq(1).css({
-			left : '50px',
+			left : '60px',
 			top : '-26px'
 		});
 		}

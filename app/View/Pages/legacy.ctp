@@ -1,6 +1,6 @@
-<div class="divider">Legacy Edition/ Premium Line from Jordan Craig</div>
+<div class="divider">Available Now Please Visit Your Nearest Retailer</div>
 <?php 
-	echo $this->Html->image('LEGACY.jpg', array(
+	echo $this->Html->image('legacy.jpg', array(
 	'alt' => 'Legacy Edition',
 	));
 ?>
