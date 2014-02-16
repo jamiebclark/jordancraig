@@ -15,6 +15,7 @@ ul.nav a {
 	font-size: 1.2em;
 	margin: 0.75em 15em  0.5em 3em;
 	}
+.main h2.about {margin-left:0;}
 .main h2 b {
 	background: url("../img/bg.png");
 	font-weight: normal;
@@ -36,6 +37,10 @@ ul.nav a {
 	}
 .main p{
 	margin: 0.75em 24em  0.5em 4.25em;
+	}
+.main p.about{
+	margin-left: 0;
+	margin-right:0;
 	}
 .main p.apply{margin:20px 0;}
 .main p.apply a{background: none repeat scroll 0 0 #191919;

@@ -24,7 +24,7 @@ body {
 }
 a {color: #000000;	text-decoration: none;}
 a:hover {color: #000000;font-weight:bold;}
-a.logo{width:100%; float:left; position:relative;}
+a.logo{width:100%; float:left; position:relative; margin-top:.5em;}
 sup{font-size:70%; vertical-align:top; height: 0; line-height: 1;}
 
 /**Navigation**/
@@ -48,7 +48,15 @@ ul.social li.first a{padding-right:0;}
 ul.social li a{padding: 0 .25em; display:block;}
 .divider{display:block; clear:both; background:#909195; width:100%; color:#ffffff; text-transform: uppercase; font: 11px/1.2 "Helvetica",Arial,sans-serif; font-weight:bold; padding:.5em 0; text-align:center;float:left;}
 .main h2 {text-transform: uppercase;text-align: left; margin: 2em 2em .35em 1.72em;}
+
+/*About*/
+.main h2.about {margin-left:0;}
+
 .main p{text-align:justify;font-size:.85em; margin:0 8em 0 2em;}
+.main p.about{
+	margin-left: 0;
+	margin-right:0;
+	}
 
 .main .media p{margin:1em; text-align:center;}
 .media{margin: 0 auto; float:left; width:100%;}

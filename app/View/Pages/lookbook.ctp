@@ -5,15 +5,15 @@
 ?>
 <div id="list" class="clear">
 	<ul id="slider" class="jcarousel-skin-tango">
-		<li><?php echo $this->Html->image("lb/lb_1.jpg", array('width' => 240,'height' => 540,));?></li>
-		<li><?php echo $this->Html->image("lb/lb_2.jpg", array('width' => 240,'height' => 540,));?></li>
-		<li><?php echo $this->Html->image("lb/lb_3.jpg", array('width' => 240,'height' => 540,));?></li>
-		<li><?php echo $this->Html->image("lb/lb_4.jpg", array('width' => 240,'height' => 540,));?></li>		
-		<li><?php echo $this->Html->image("lb/lb_5.jpg", array('width' => 240,'height' => 540,));?></li>
-		<li><?php echo $this->Html->image("lb/lb_6.jpg", array('width' => 240,'height' => 540,));?></li>
-		<li><?php echo $this->Html->image("lb/lb_7.jpg", array('width' => 240,'height' => 540,));?></li>
-		<li><?php echo $this->Html->image("lb/lb_8.jpg", array('width' => 240,'height' => 540,));?></li>
-		<li><?php echo $this->Html->image("lb/lb_9.jpg", array('width' => 240,'height' => 540,));?></li>
-		<li><?php echo $this->Html->image("lb/lb_10.jpg", array('width' => 240,'height' => 540,));?></li>
+		<li><?php echo $this->Html->image("lb/lb_1.jpg", array('width' => 200,'height' => 450,));?></li>
+		<li><?php echo $this->Html->image("lb/lb_2.jpg", array('width' => 200,'height' => 450,));?></li>
+		<li><?php echo $this->Html->image("lb/lb_3.jpg", array('width' => 200,'height' => 450,));?></li>
+		<li><?php echo $this->Html->image("lb/lb_4.jpg", array('width' => 200,'height' => 450,));?></li>		
+		<li><?php echo $this->Html->image("lb/lb_5.jpg", array('width' => 200,'height' => 450,));?></li>
+		<li><?php echo $this->Html->image("lb/lb_6.jpg", array('width' => 200,'height' => 450,));?></li>
+		<li><?php echo $this->Html->image("lb/lb_7.jpg", array('width' => 200,'height' => 450,));?></li>
+		<li><?php echo $this->Html->image("lb/lb_8.jpg", array('width' => 200,'height' => 450,));?></li>
+		<li><?php echo $this->Html->image("lb/lb_9.jpg", array('width' => 200,'height' => 450,));?></li>
+		<li><?php echo $this->Html->image("lb/lb_10.jpg", array('width' => 200,'height' => 450,));?></li>
 	</ul>
 </div>
