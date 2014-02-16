@@ -1,4 +1,4 @@
-<?php echo $this->Html->image('contact.jpg', array('alt' => '2013 Fall Winter Campaign')); ?>
+<?php echo $this->Html->image('contact.jpg', array('alt' => '2014 Spring Summer Campaign')); ?>
 <div class="clear"></div>
 <h2>Contact</h2>
 <?php 

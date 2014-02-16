@@ -114,7 +114,7 @@ CakeLog::config('error', array(
  **/
 
 //Emails
-define('WHOLESALE_EMAIL', 'alexandra@brianbrothers.com');
+define('WHOLESALE_EMAIL', 'brianbrosorder@gmail.com');
 //define('GENERAL_EMAIL', 'brianjr.brianbros@gmail.com');
-define('STORE_LOCATOR_EMAIL', 'alexandra@brianbrothers.com');
+define('STORE_LOCATOR_EMAIL', 'brianbrosorder@gmail.com');
 
