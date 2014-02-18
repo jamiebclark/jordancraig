@@ -13,6 +13,7 @@
 }
 .jcarousel-skin-tango .jcarousel-clip-horizontal {
     width:  100%;
+	/*width:960px;*/
     height: 360px;
 }
 .jcarousel-skin-tango .jcarousel-item {
