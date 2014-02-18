@@ -17,6 +17,10 @@
 /dist
 /tags
 
+# WordPress blog
+/app/webroot/updates
+/app/webroot/updates/*
+
 # OS generated files #
 ######################
 .DS_Store
