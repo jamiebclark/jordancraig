@@ -14,8 +14,8 @@ $(document).ready(function() {
 		wrap: 'circular'		
     })
 	.jcarouselAutoscroll({
-        target: '+=1',
-        interval: 3000
+    target: '+=1',
+    interval: 3000
     });
 	
 $('.flex-direction-nav li').eq(0).css('border', '1px solid red');
