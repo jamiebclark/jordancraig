@@ -1,6 +1,15 @@
 <?php
 class Inquiry extends AppModel {
 	public $name = 'Inquiry';
+	public $actsAs = array(
+		'Location.Mappable' => array(
+			'addressField' => 'store_address',
+			'cityField' => 'store_city',
+			'stateField' => 'store_state',
+			'zipField' => 'store_zip',
+			'countryField' => false,
+		)
+	);
 	public $order = array('Inquiry.created' => 'DESC');
 	
 	public $validate = array(
@@ -18,7 +27,15 @@ class Inquiry extends AppModel {
 		),
 		'address' => array(
 			'rule' => 'notEmpty',
-			'message' => 'Please enter your address',
+			'message' => 'Please include your street address',
+		),
+		'city' => array(
+			'rule' => 'notEmpty',
+			'message' => 'Please include your city',
+		),
+		'state' => array(
+			'rule' => 'notEmpty',
+			'message' => 'Please include your state',
 		),
 		'zip' => array(
 			'rule' => 'notEmpty',
@@ -31,6 +48,18 @@ class Inquiry extends AppModel {
 		'store_address' => array(
 			'rule' => 'notEmpty',
 			'message' => 'Please enter your store address',
+		),
+		'store_city' => array(
+			'rule' => 'notEmpty',
+			'message' => 'Please enter your store city',
+		),
+		'store_state' => array(
+			'rule' => 'notEmpty',
+			'message' => 'Please enter your store state',
+		),
+		'store_zip' => array(
+			'rule' => 'notEmpty',
+			'message' => 'Please enter your store zip code',
 		)
 	);
 	
@@ -115,15 +144,24 @@ class Inquiry extends AppModel {
 		if ($isWholesale) {
 			$fieldsDisplay += array(
 				'Store Name' => 'store_name',
-				'Store Address' => 'store_address',
+				'Store Address' => array(
+					'store_address',
+					'store_city',
+					'store_state',
+					'store_zip',
+				),
 				'Web Address' => 'website',
 				'Contact Name' => 'name',
 			);
 		} else {
 			$fieldsDisplay += array(
 				'Name' => 'name',
-				'Address' => 'address',
-				'Zip Code' => 'zip',
+				'Address' => array(
+					'address',
+					'city',
+					'state',
+					'zip',
+				)
 			);
 		}
 		$fieldsDisplay += array(
@@ -132,9 +170,19 @@ class Inquiry extends AppModel {
 		);
 		
 		foreach ($fieldsDisplay as $label => $field) {
-			$val = $result[$field];
-			if ($field == 'created' || $field == 'modified') {
-				$val = date('F j, Y H:iA', strtotime($val));
+			if (is_array($field)) {
+				$val = '';
+				foreach ($field as $f) {
+					if (!empty($val)) {
+						$val .= ', ';
+					}
+					$val .= $result[$f];
+				}
+			} else {
+				$val = $result[$field];
+				if ($field == 'created' || $field == 'modified') {
+					$val = date('F j, Y H:iA', strtotime($val));
+				}
 			}
 			$message .= "$label: $val$eol";
 		}

@@ -38,4 +38,9 @@ class InquiriesController extends AppController {
 	public function admin_delete($id = null) {
 		$this->FormData->deleteData($id);
 	}
+	
+	public function _setFormElements() {
+		$states = $this->Inquiry->State->selectList();
+		$this->set(compact('states'));
+	}
 }	

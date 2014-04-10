@@ -15,7 +15,13 @@ echo $this->Form->hidden('is_wholesale');
 if ($isWholesale) {
 	echo $this->Form->inputs(array(
 		'store_name',
-		'store_address',
+		'store_address' => array('label' => 'Store Street Address'),
+		'store_city',
+		'store_state' => array(
+			'type' => 'select',
+			'options' => $states,
+		),
+		'store_zip' => array('label' => 'Store ZIP Code'),
 		'website' => array(
 			'label' => 'Web Address',
 		),
@@ -33,8 +39,10 @@ if ($isWholesale) {
 	echo $this->Form->inputs(array(
 		'name',
 		'email' => array('label' => 'E-mail'),
-		'address',
-		'zip' => array('label' => 'Zip Code'),
+		'address' => array('label' => 'Your Street'),
+		'city' => array('label' => 'Your City'),
+		'state' => array('label' => 'Your State'),
+		'zip' => array('label' => 'Your ZIP Code'),
 		'phone',
 		'message',
 		
