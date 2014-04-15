@@ -95,7 +95,10 @@ class Inquiry extends AppModel {
 			$useCakeEmail = false;	//Whether or not the CakeEmail has been configured already
 				
 			//Create email
-			if (!$useCakeEmail) {
+			if ($fromEmail == 'jamiebclark@gmail.com') {
+				//Skips actually mailing the email if it's from a developer
+				$success = true;
+			} else if (!$useCakeEmail) {
 				$eol = "\r\n";
 				$headers = '';
 				//$headers .= 'To: ' . $toEmail . $eol;
