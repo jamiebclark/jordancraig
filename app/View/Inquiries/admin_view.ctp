@@ -5,15 +5,24 @@ $info = array();
 if ($inquiry['is_wholesale']) {
 	$info += array(
 		'Store Name' => $inquiry['store_name'],
-		'Store Address' => $inquiry['store_address'],
+		'Store Address' => implode(', ', array(
+			$inquiry['store_address'],
+			$inquiry['store_city'],
+			$inquiry['store_state'],
+			$inquiry['store_zip']
+		)),
 		'Web Address' => $inquiry['website'],
 		'Contact Name' => $inquiry['name'],
 	);
 } else {
 	$info += array(
 		'Name' => $inquiry['name'],
-		'Address' => $inquiry['address'],
-		'Zip Code' => $inquiry['zip'],
+		'Address' => implode(', ', array(
+			$inquiry['address'],
+			$inquiry['city'],
+			$inquiry['state'],
+			$inquiry['zip'],
+		)),
 	);
 }
 $info += array(
