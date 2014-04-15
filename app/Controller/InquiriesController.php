@@ -4,6 +4,9 @@ App::uses('CakeEmail', 'Network/Email');
 
 class InquiriesController extends AppController {
 	public $name = 'Inquiries';
+	public $paginate = array(
+		'group' => 'Inquiry.id'
+	);
 
 	public function add($isWholesale = 1) {
 		$this->FormData->addData(array(
